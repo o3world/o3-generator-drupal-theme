@@ -1,0 +1,41 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    margin-top: 0;
+    margin-right: 10px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 15px;
+
+    &:hover,
+    &:focus {
+
+      .social-links__image {
+        fill: color(primary, base);
+      }
+    }
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    fill: color(secondary, dark);
+    transition: fill 200ms ease;
+  }
+}

@@ -1,0 +1,33 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Media Object
+
+<Canvas>
+    <Story id="component-media-object--default"/>
+    <Story id="component-media-object--image-right-top"/>
+    <Story id="component-media-object--image-left-bottom"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>A media object is a component with options for combining and relaying out content. </p>
+    <p>This media object uses modifier classes to change the layout and orientation of the media in comparison to supporting content. The default layout positions images to the left of their supporting content on desktop, and above their supporting content on mobile. Add the <code>media-object--image-right</code> modifier to position images to the right of their supporting content on desktop, and the <code>media-object--image-bottom</code> modifier to position images below their supporting content on mobile.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each media object should include the <code>role="group"</code> attribute on the outer container.</li>
+      <li>Each media object should include an <code>aria-labelledby="name"</code> attribute on the outer container. This should link to a unique id on the <code>media-object__title</code> element.</li>
+      <li>If the media object has a link, ensure that there is an <code>aria-label</code> attribute describing the context of the link.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All links should have visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+    </ul>
+  </div>
+</div>

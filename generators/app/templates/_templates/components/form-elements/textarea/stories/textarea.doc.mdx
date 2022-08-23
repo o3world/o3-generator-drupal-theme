@@ -1,0 +1,43 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Textarea
+
+<Canvas>
+    <Story id="forms-textarea--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>
+      The textarea element allows users to enter data into applications and websites. All textarea elements should include the following states:
+      <ul>
+      <li>Hover state</li>
+      <li>Focus state</li>
+      <li>Disabled state</li>
+      <li>Error state</li>
+      </ul>
+    </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>All textarea elements should be associated with a <code>label</code>.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All textarea elements should have a visible keyboard focus state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable form element</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>
+      When the input element is focused, screen readers should announce the following:
+      <ul class="documentation__keys">
+        <li>Input type</li>
+      </ul>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+/*
+ * mixins
+ *
+ ********************************************************************************/
+
+/*
+ * define BEM naming conventions
+ *
+ ************************************************************/
+
+// Block Element
+// @param {String} $element - Element name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+// Block Modifier
+// @param {String} $modifier - Modifier name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// @alias element
+@mixin bem-e($element) {
+  @include element($element) {
+    @content;
+  }
+}
+
+// @alias modifier
+@mixin bem-m($modifier) {
+  @include modifier($modifier) {
+    @content;
+  }
+}
+
+/*
+ * typography
+ *
+ ************************************************************/
+
+// font size - unitless - @include font-size(16)
+@mixin font-size($font-size: $base-font-size) {
+  $rem: calc($font-size / $base-font-size);
+
+  font-size: $font-size * 1px;
+  font-size: #{$rem}rem; // sass-lint:disable-line no-duplicate-properties
+}
+
+// unitless line height mixin
+@mixin line-height($font-size, $line-height: $font-size) {
+  line-height: calc($line-height / $font-size);
+}
+
+// text truncate - requires inline-block or block for proper styling
+@mixin text-truncate() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*
+ * transitions
+ *
+ ************************************************************/
+
+// scale down
+@mixin scale-down($time: 1s) {
+  animation: scale-down $time ease-out 1;
+}
+
+@keyframes scale-down {
+  0% { transform: scale(1); }
+  50% { transform: scale(.95); }
+  100% { transform: scale(1); }
+}
+
+// scale up
+@mixin scale-up($time: 1s) {
+  animation: scale-up $time ease-in-out 1;
+}
+
+@keyframes scale-up {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+// fadein
+@mixin fade-in($time: 1s) {
+  animation: fade-in $time ease-out 1;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// slide in down and fadein
+@mixin slide-in-down($time) { animation: slide-in-down $time ease-in-out; }
+
+@keyframes slide-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  75% { transform: translateY(0); }
+  100% { opacity: 1; }
+}
+
+// slide in up and fadein
+@mixin slide-in-up($time) { animation: slide-in-up $time ease-in-out; }
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  75% { transform: translateY(0); }
+  100% { opacity: 1; }
+}
+
+// slide in from right and fadein
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  75% { transform: translateX(0); }
+  100% { opacity: 1; }
+}
+
+@mixin slide-in-right($time) { animation: slide-in-right $time ease-out backwards; }
+
+// slide in form left and fadein
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  75% { transform: translateX(0); }
+  100% { opacity: 1; }
+}
+
+@mixin slide-in-left($time) { animation: slide-in-right $time ease-out backwards; }

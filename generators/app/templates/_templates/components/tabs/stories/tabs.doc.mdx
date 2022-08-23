@@ -1,0 +1,40 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Tabs
+
+<Canvas>
+    <Story id="component-tabs--default"/>
+</Canvas>
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+		<p>Displays tabbed content with specific titles and descriptions grouped together. Only one tab can be visible at a time, with the first tab visible by default. This component functions as tabs on both desktop and mobile.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>The element that wraps tabs has <code>role="tablist"</code>.</li>
+      <li>Each tab has <code>role="tab"</code> and is contained within the element with <code>role="tablist"</code>.</li>
+			<li>Each tab content panel has <code>role="tabpanel"</code>.</li>
+      <li>Each tab has the property <code>aria-controls</code> referring to its tabpanel.</li>
+			<li>The active tab has <code>aria-selected="true"</code> and all other tab elements have <code>aria-selected="false"</code>.</li>
+			<li>The active tabpanel has <code>tab-index="0"</code> and all other tab elements have <code>tab-index="-1"</code>.</li>
+      <li>Each <code>tabpanel</code> has the property <code>aria-labelledby</code> referring to its associated tab.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+			<li>Tabs should have visible <code>:focus</code> state.</li>
+			<li>Tabs should have visible <code>aria-selected="true"</code> state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+			<li>When a tab has focus, <code>Space</code> or <code>Enter</code> key activates the tab, which displays the associated panel.</li>
+      <li>When a tabpanel has been activated and is displaying panel content, <code>Tab</code> moves focus to the corresponding tabpanel element, which is next in the tab sequence.</li>
+      <li><code>Shift + Tab</code> will move focus back to the activating tab.</li>
+			<li><code>&leftarrow;</code> <code>&rightarrow;</code> = Cycles tab focus. If focus is on the last tab, moves focus to the first tab. If focus is on the first tab, moves focus to the last tab.</li>
+			<li><code>&uparrow;</code> <code>&downarrow;</code> = Cycles tab focus (vertical tabs). If focus is on the last tab, moves focus to the first tab. If focus is on the first tab, moves focus to the last tab.</li>
+      <li><code>Home</code> = Focus first tab</li>
+      <li><code>End</code> = Focus last tab</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Breadcrumbs
+
+<Canvas>
+    <Story id="static-html-breadcrumbs--default"/>
+</Canvas>
+
+## Documentaion
+
+### Usage
+Breadcrumbs are used to track and display where the user is in the hierarchy of the current page, relative to the structure of the website.
+
+### Labelling Expectations
+Each breadcrumb list should be contained in a nav element with `aria-label=“breadcrumb”`
+The current page in the breadcrumb list should have an `aria-current` attribute.
+
+### Focus Expectations
+Every link should have a visible keyboard focus state
+Keyboard Expectations
+`Tab` = Move to next focusable element
+`Enter` = Navigate to focused link
+
+### Screen Reader Expectations
+When interacting with breadcrumb navigation, screen readers should announce the following information:
+- The navigation by name as defined in the aria-label.
+- Breadcrumb links when focused.
+
+### Tab Order Expectations
+When navigating the breadcrumb list, the following tab order is expected:
+
+1. Each tab keypress will advance to the next link in the list.
+2. The current page's list item will not be included in the tab list, since it is not an active link.

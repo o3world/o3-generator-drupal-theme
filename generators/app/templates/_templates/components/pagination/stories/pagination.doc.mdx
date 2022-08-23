@@ -1,0 +1,38 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Pagination
+
+<Canvas>
+    <Story id="component-pagination--text-buttons"/>
+    <Story id="component-pagination--arrow-buttons"/>
+
+</Canvas>
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Pagination controls are used to navigate through paged content using either the Next/Previous Page links or links to specific numbered pages. This is purely a markup example, and the following classes should be incoprorated when integrating this markup with functioning pagination:</p>
+    <ul>
+      <li>The <code>pagination__item--previous-page</code> and <code>pagination__item--next-page</code> modifer classes should be used to indicate the previous and next buttons.</li>
+      <li>If the previous and next buttons use SVGs, the SVGs should include the <code>pagination__nav-arrow</code> class, as well as the respective modifier classes, <code>pagination__nav-arrow--previous</code> and <code>pagination__nav-arrow--next</code>.</li>
+      <li>SVG buttons should include <code>u-sr-only</code> text to indicate the function of the button.</li>
+      <li><code>pagination__item--is-current</code> should be used to used to indicate the current page.</li>
+    </ul>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Pagination should be contained within a <code>nav</code> element.</li>
+      <li>The outer container should include an <code>aria-label="pagination"</code> to describe the type of navigation.</li>
+      <li>The current page link should include <code>aria-current="page"</code>.</li>
+      <li>If a link is disabled it should include <code>aria-disabled="true"</code>.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Pagination items should have visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+    </ul>
+  </div>
+</div>

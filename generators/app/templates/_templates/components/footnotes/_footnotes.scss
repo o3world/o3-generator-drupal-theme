@@ -1,0 +1,55 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.footnote {
+
+  &__counter {
+    counter-reset: footnotes; // Initialize a `footnotes` counter on the wrapper
+
+    sup {
+      position: relative;
+      top: 5px;
+      left: -5px;
+    }
+  }
+
+  &__container {
+    margin-top: 50px;
+    border-top: 1px solid color(neutral, lighter);
+    padding-left: $base-spacing;
+  }
+
+  &__label {
+    padding-left: 5px;
+    counter-increment: footnotes; // Increment the counter at each new reference
+
+    &::after {
+      @include font-size(16);
+
+      margin-left: -6px;
+      cursor: pointer;
+      vertical-align: super;
+      content: '['counter(footnotes) ']'; // display current state (#) of counter
+    }
+
+    &:focus,
+    &.has-focus { outline: 2px solid color(success, base); }
+  }
+
+  &__item {
+    @include font-size(18);
+    border-bottom: 2px solid transparent;
+
+    &:target { border-bottom: 2px solid color(success, base); } // highlight the referenced footnote
+  }
+
+  &__source-link,
+  &__back-link {
+
+    &:focus,
+    &.has-focus { outline: 2px solid color(success, base); }
+  }
+
+  ol { padding-left: 20px; }
+}

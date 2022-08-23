@@ -1,0 +1,26 @@
+{% for modal in modals %}
+  <button data-micromodal-trigger="{{ modal.id }}">
+    {{ modal.buttonLabel }}
+  </button>
+
+  <!-- Modal -->
+  <div class="modal" id="{{ modal.id }}" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="{{ modal.id }}">
+        <button class="modal__close" aria-label="Close this dialog window" data-micromodal-close>
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 18 18" class="modal__close-svg" role="presentation" aria-hidden="true">
+            <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"/>
+          </svg>
+        </button>
+        <div class="modal__content">
+          {% if modal.header %}
+            <h2>{{ modal.header }}</h2>
+          {% endif %}
+          {% if modal.body %}
+            <p class="modal__text-body">{{ modal.body }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

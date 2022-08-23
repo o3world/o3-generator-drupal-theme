@@ -1,0 +1,52 @@
+
+
+{% for card in cards %}
+  <article class="{{ card.link ? 'card__container card__container--link' : 'card__container' }}">
+    {% if card.link %}
+      <a href="{{ card.href }}" aria-label="{{ card.title }}">
+    {% endif %}
+    {% if card.image %}
+      <div class="card__img">
+        <img src="{{ card.image.src }}" alt="{{ card.image.alt }}">
+      </div>
+      <!-- /.card__img -->
+    {% endif %}
+    <div class="u-padding-xl card__content">
+      {% if card.date %}
+        <p class="h5 card__meta">
+          Article <span role="presentation" aria-hidden="true">&#8226;</span>
+          <span class="u-sr-only">Date: </span><time datetime="{{ card.date.datetime }}">{{ card.date.text }}</time>
+        </p>
+        <!-- /.card__meta -->
+      {% endif %}
+      {% if card.title %}
+        <h4 class="u-margin-hug card__title">{{ card.title }}</h4>
+      {% endif %}
+      {% if card.text %}
+        <div class="card__text">
+          <p>{{ card.text }}</p>
+        </div>
+        <!-- /.card__text -->
+      {% endif %}
+      {% if card.btn %}
+        <div class="card__btn-container">
+          {% if card.link %}
+            <div class="btn card__btn">
+              {{ card.btn.text }} <span class="u-sr-only">{{ card.btn.srText }}</span>
+            </div>
+          {% else %}
+            <a href="{{ card.btn.href }}" class="btn" aria-label="{{ card.btn.text }} {{ card.btn.srText }}">
+              {{ card.btn.text }}
+            </a>
+          {% endif %}
+        </div>
+        <!-- /.card__btn-container -->
+      {% endif %}
+    </div>
+    <!-- /.card__content -->
+    {% if card.link %}
+      </a>
+    {% endif %}
+  </article>
+  <!-- /.card__container -->
+{% endfor %}

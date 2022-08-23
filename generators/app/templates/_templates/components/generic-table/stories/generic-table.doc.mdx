@@ -1,0 +1,38 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Gerneric Table
+
+<Canvas>
+    <Story id="static-html-generic-table--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>A Generic Table that includes column headers as well as a summary attribute to describe the purpose of the data in the table. For accessibility purposes, be sure to include a caption element in each table.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each table should include a <code>caption</code> that is placed directly as a child of the <code>table</code> element.</li>
+      <li>If a table row has a header, the attribute <code>scope="row"</code> should be added to the row header.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <p> A table is a static tabular structure, and as such, is not interactive. Its cells are neither focusable nor selectable.</p>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+        <li><code>Control + Option</code> <code>←</code> <code>→</code> <code>&uparrow;</code> <code>&downarrow;</code> = Navigate through table row and column content with screen reader</li>
+        <li>Note: Navigating with the <code>&uparrow;</code> <code>&downarrow;</code> arrows could cause some screen readers to skip over the <code>caption</code>.</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>When interacting with a table, screen readers should announce the following information:</p>
+    <ul>
+        <li>Table caption</li>
+        <li>Table cell content, associating rows with columns if applicable</li>
+    </ul>
+    <h3>Tab Order Expectations</h3>
+    <ul>
+        <li>Any widget contained in a table is a separate stop in the page tab navigation order.</li>
+    </ul>
+  </div>
+</div>

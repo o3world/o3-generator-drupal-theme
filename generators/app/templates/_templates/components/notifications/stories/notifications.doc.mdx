@@ -1,0 +1,43 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Notifications
+
+<Canvas>
+  <Story id="component-notifications--success"/>
+</Canvas>
+<Canvas>
+  <Story id="component-notifications--info"/>
+</Canvas>
+<Canvas>
+  <Story id="component-notifications--warning"/>
+</Canvas>
+<Canvas>
+  <Story id="component-notifications--error"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Notifications provide information or feedback to users depending on the situation.</p>
+    <p>This notification component comes with several configuration attributes. Use the <code>data-notification-type</code> attribute to select the notification type from the following options: <code>succes</code>, <code>info</code>, <code>warning</code>, <code>error</code>. Use the optional <code>data-notification-text</code> attribute to assign text that will be shown in the notification.</p>
+    <p>For notification triggers, the <code>data-is-dismissible</code> attribute determines whether or not the notification is dismissable. Lastly, the <code>data-notification-trigger</code> and <code>data-notification-close</code> attributes function as a trigger points for the notification to be opened or closed.</p>
+
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>If a notification includes a close button it should have an <code>aria-label</code> to describe the context of the button</li>
+    </ul>
+  </div>
+
+
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Notification buttons should have visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>Space</code> = Activate/close notifications</li>
+    </ul>
+  </div>
+</div>

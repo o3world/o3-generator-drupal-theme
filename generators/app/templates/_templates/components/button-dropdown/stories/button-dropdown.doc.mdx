@@ -1,0 +1,58 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Button Dropdown
+
+<Canvas>
+    <Story id="component-button-dropdown--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Button dropdowns are used to toggle nested information. If a user clicks outside the element while the dropdown menu is open, the menu will close. If a user activates another dropdown menu while the dropdown menu is open, the active menu will close.</p>
+    <p>This button dropdown comes with the following configuration attributes:
+      <ul>
+        <li><code>data-dropdown-toggle</code> defines the button or element that will trigger the dropdown.</li>
+        <li><code>data-dropdown-panel</code> defines the sub panel that contains all of the nested information.</li>
+        <li>In situations where the panel is open and the user clicks off of the element, the panel will close. This is also the case when another dropdown on the same page is opened.</li>
+      </ul>
+    </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each dropdown toggle button needs <code>aria-haspopup="true"</code>.</li>
+      <li>If the dropdown menu is visible, the dropdown toggle button should have <code>aria-expanded</code> set to true. If the dropdown menu is not visible, <code>aria-expanded</code> is set to false.</li>
+      <li>If the dropdown menu is visible, its menu items should have <code>tabindex="0"</code> . If the dropdown menu is not visible, its menu items should have <code>tabindex="-1"</code>.</li>
+      <li>Each list item in the dropdown menu should have <code>role="none"</code>, and each items inner link should have <code>role=“menu item”</code></li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Button should have visible keyboard focus state</li>
+      <li>Menu items should have visible keyboard focus state</li>
+      <li>All keyboard interactions relate to when the button or menu items are focused</li>
+    </ul>
+  </div>
+
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Enter</code> or <code>Space</code> = Expand/Collapse dropdown menu</li>
+      <li><code>Tab</code> = If dropdown menu open, move to next focusable element</li>
+      <li><code>Shift &plus; Tab</code> = If dropdown menu open, move to previous focusable element</li>
+      <li><code>Esc</code> = Collapse dropdown menu</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>When the button dropdown is focused, screen readers should announce the following:</p>
+    <ul>
+        <li>Button text</li>
+        <li>Menu items</li>
+    </ul>
+    <h3>Tab Order Expectations</h3>
+    <p>When navigating through a button dropdown, the following tab order is expected:</p>
+    <ol>
+        <li>Button</li>
+        <li>Menu items (if the menu is visible/expanded)</li>
+        <li>Next focusable element</li>
+    </ol>
+  </div>
+
+</div>
+

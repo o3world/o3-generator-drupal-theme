@@ -1,0 +1,63 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+@import '~utility';
+
+$table-header-color: #e1e1e1;
+$table-border-color: #a3a7aa;
+
+table {
+  border: 1px solid $table-border-color;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  // using @extend in case a class can't be manually attached <caption>
+  // `position: relative` fixes issue with table borders
+  caption {
+    @extend .u-sr-only;
+
+    position: relative;
+  }
+
+  tr { background-color: color(default, light); }
+  th { background-color: $table-header-color; }
+
+  th,
+  td {
+    border: 1px solid $table-border-color;
+    padding: 9px 12px;
+    vertical-align: top;
+    text-align: left;
+    white-space: nowrap;
+
+    &:first-child { border-left: 0; }
+    &:last-child { border-right: 0; }
+  }
+
+  thead {
+
+    tr:last-child th,
+    tr:last-child td { border-top: 0; }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  tbody {
+
+    tr:last-child th,
+    tr:last-child td { border-bottom: 0; }
+
+    tr:nth-child(odd) td { background-color: color(neutral, lightest); }
+  }
+
+  tfoot {
+
+    tr:last-child th,
+    tr:last-child td { border-bottom: 0; }
+  }
+}

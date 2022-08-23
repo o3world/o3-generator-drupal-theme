@@ -1,0 +1,37 @@
+<!-- NOTE: Inline styles should be removed before implimenting into a project -->
+
+{% for quote in quotes %}
+  <div class="quote">
+    <blockquote>
+      <p class="quote__text">
+        <span class="u-sr-only">&ldquo;</span>
+        {{ quote.text }}
+        <span class="u-sr-only">&rdquo;</span>
+      </p>
+      {% if not quote.image %}
+        <cite>{{ quote.citation }}</cite>
+      {% endif %}
+    </blockquote>
+    {% if quote.image %}
+      <figcaption class="quote__citation-container">
+        <div class="quote__citation-image quote__citation-image--circle">
+          <img
+            src="{{ quote.image.src }}"
+            alt="{{ quote.image.alt }}"
+          >
+        </div>
+        <p class="quote__citation">
+          <span class="quote__citation-name">
+            <strong>{{ quote.citation.name }}</strong>
+          </span>
+          <span class="quote__citation-title">{{ quote.citation.title }}</span>
+        </p>
+      </figcaption>
+    {% endif %}
+  </div>
+{% endfor %}
+
+<h3 style="margin-top: 50px;">Inline Quote</h3>
+<p>For shorter quotes that are usually inline with a sentence, use the Quote element. This is a sentence that has a Quote element.
+	<q style="background-color: #dcdcdc">This is the quote element</q>
+</p>

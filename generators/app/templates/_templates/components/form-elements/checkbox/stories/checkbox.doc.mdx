@@ -1,0 +1,45 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Checkbox
+
+<Canvas>
+    <Story id="forms-checkbox--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>
+      The checkbox element allows users to enter data into applications and websites. All checkbox elements should include the following states:
+      <ul>
+      <li>Hover state</li>
+      <li>Focus state</li>
+      <li>Disabled state</li>
+      <li>Error state</li>
+      </ul>
+    </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>All checkbox elements should be associated with a <code>label</code>.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All checkbox elements should have a visible keyboard focus state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable form element</li>
+      <li><code>Enter</code> or <code>Space</code>  = Select checkbox</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>
+      When the checkbox element is focused, screen readers should announce the following:
+      <ul class="documentation__keys">
+        <li>Checkbox label</li>
+        <li>Input type</li>
+      </ul>
+    </p>
+  </div>
+</div>

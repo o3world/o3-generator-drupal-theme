@@ -1,0 +1,28 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Video
+
+<Canvas>
+    <Story id="component-video--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>This video player is setup to specifically work with youtube videos and comes with a data attribute, <code>data-video-inline</code>, which links the video the the JS video array in the event that there is more than one video on a page.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each video play button should have an <code>aria-label</code> attribute to describe its function.</li>
+      <li>If the video play button uses an SVG, the SVG should include the <code>role="presentation"</code> and <code>aria-hidden="true"</code> attributes.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Play buttons should have visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Enter</code> or <code>Space</code> = Play/Pause video</li>
+    </ul>
+  </div>
+</div>

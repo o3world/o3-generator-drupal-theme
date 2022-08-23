@@ -1,0 +1,219 @@
+/*
+ * typography elements
+ *
+ ********************************************************************************/
+
+
+/*
+ * global typographic treatment
+ *
+ ************************************************************/
+
+html,
+body {
+  // default typeface setup
+  @include line-height(16, 24);
+  @include font-size($base-font-size);
+
+  font-family: $base-font;
+
+  // make everything look a little nicer in webkit
+  -webkit-font-smoothing: antialiased;
+  color: $text-color;
+}
+
+/*
+ * headers
+ *
+ ************************************************************/
+
+// sass-lint:disable single-line-per-selector
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: $base-spacing 0;
+  font-weight: normal;
+  color: $text-color;
+}
+
+// adjusted subsript for `O3`
+h1,
+h2,
+h3,
+h4,
+.h1,
+.h2,
+.h3,
+.h4 {
+
+  sub { bottom: -.5em; }
+}
+
+h1,
+.h1 {
+  @include line-height(50, 60);
+  @include font-size(50);
+
+  font-family: $brand-font-light;
+
+  @media (max-width: breakpoint(medium)) {
+    @include line-height(24, 29);
+    @include font-size(24);
+  }
+}
+
+h2,
+.h2 {
+  @include line-height(40, 48);
+  @include font-size(40);
+
+  font-family: $brand-font-light;
+}
+
+h3,
+.h3 {
+  @include line-height(24, 30);
+  @include font-size(24);
+
+  font-family: $brand-font-light;
+
+  @media (min-width: breakpoint(medium)) {
+    @include line-height(30, 40);
+    @include font-size(30);
+  }
+}
+
+h4,
+.h4 {
+  @include line-height(30, 40);
+  @include font-size(30);
+
+  font-family: $brand-font-light;
+
+  @media (max-width: breakpoint(medium)) {
+    @include line-height(24, 32);
+    @include font-size(24);
+  }
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $brand-font-b;
+}
+
+h5,
+.h5 {
+  @include font-size(14);
+
+  line-height: 1.75;
+  color: color(primary);
+
+  @media (min-width: breakpoint(medium)) { @include font-size(16); }
+}
+
+h6,
+.h6 {
+  @include line-height(14, 18);
+  @include font-size(14);
+
+  color: color(neutral);
+}
+
+.u-text-light { color: color(default, light); }
+
+.u-text-quiet { color: color(neutral, light); }
+
+.u-text-title-block,
+.u-text-section-title {
+  @include line-height(24, 40);
+  @include font-size(24);
+
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .1px;
+  font-family: $brand-font-b;
+  color: color(default, dark);
+}
+
+.u-text-small-caps {
+  @include font-size(16);
+  @include line-height(16, 28);
+
+  text-transform: uppercase;
+  letter-spacing: .1px;
+  font-family: $brand-font-b;
+}
+
+/*
+ * basic typographic elements
+ *
+ ************************************************************/
+
+address,
+p,
+ul,
+ol {
+  @include font-size(16);
+
+  margin: $base-spacing 0;
+  line-height: 1.5;
+
+  @media (min-width: breakpoint(medium)) {
+    @include line-height(24, 36);
+    @include font-size(24);
+  }
+}
+
+ul,
+ol {
+  li { margin-top: calc($base-spacing / 2); }
+}
+
+ul { list-style-type: disc; }
+
+// basic text link
+a {
+  text-decoration: none;
+  color: $link-color; /* default color */
+  transition: color $transition-duration, text-decoration $transition-duration;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $link-color-hover;
+  }
+}
+
+// address
+address {
+  margin-bottom: 0;
+  font-style: normal;
+}
+
+
+/*
+ * starting typographic content margin
+ *
+ ************************************************************/
+
+main > *:first-child { margin-top: 0; }
+
+main > div > *:first-child { margin-top: 0; }
+
+/*
+ * code snippet
+ *
+ ************************************************************/
+
+code { vertical-align: bottom; }

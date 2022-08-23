@@ -1,0 +1,52 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__item {
+    margin: 0;
+    border: 1px solid color(neutral, light);
+    border-right-width: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+
+    &--is-current {
+      background-color: color(neutral, lighter);
+    }
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 8px 16px;
+    min-width: 40px;
+    height: 100%;
+    transition: background-color .25s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: color(neutral, lighter);
+    }
+  }
+
+  &__nav-arrow {
+    width: 15px;
+    height: 15px;
+    fill: color(secondary, base);
+
+    &--next {
+      transform: rotate(180deg);
+    }
+  }
+}

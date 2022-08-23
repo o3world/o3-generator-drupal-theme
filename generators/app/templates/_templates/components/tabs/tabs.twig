@@ -1,0 +1,18 @@
+<div class="tabs" data-tabs-container>
+    <ul class="tabs__list" role="tablist" aria-label="{{ heading }}">
+        {% for tab in tabs %}
+            <li class="tabs__list-item" data-tabs-button-wrap>
+                <button class="tabs__button" role="tab" aria-selected="false" data-tabs-button>
+                    {{ tab.heading }}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="tabs__window">
+        {% for tab in tabs %}
+            <div class="tabs__panel" role="tabpanel" data-tabs-panel data-tabs-panel-active="false">
+                {{ tab.content }}
+            </div>
+        {% endfor %}
+    </div>
+</div>

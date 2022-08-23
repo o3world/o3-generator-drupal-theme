@@ -1,0 +1,74 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+// Sample area styles here are for presentational purposes only to
+// highlight tooltips functional area. In practice, you should
+// be setting your own styles here; the only requirement being that
+// your container div be set with a data-tooltip-area attribute
+.sample-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  border: 4px dashed color(neutral, light);
+  width: 100%;
+  height: 100px;
+
+  h3 {
+    pointer-events: none;
+  }
+}
+
+.tooltip {
+  @include font-size(14);
+
+  position: fixed;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid color(neutral, lighter);
+  padding: 10px 15px;
+  background-color: color(neutral, lightest);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px) translateY(-50%);
+  transition:
+    .2s visibility ease-in-out,
+    .2s opacity ease-in-out;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: block;
+    border-right: 0;
+    transform: translateY(-50%) rotate(45deg);
+    content: '';
+  }
+
+  &::before {
+    left: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: inherit;
+  }
+
+  &::after {
+    z-index: -1;
+    left: -8px;
+    width: 12px;
+    height: 12px;
+    background-color: color(neutral, lighter);
+  }
+
+  &[aria-expanded='true'],
+  &:focus {
+    opacity: 1;
+  }
+
+  &:focus {
+    position: absolute;
+  }
+}

@@ -1,0 +1,44 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Radio Button
+
+<Canvas>
+    <Story id="forms-radio-button--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>
+      The radio button element allows users to enter data into applications and websites. All radio button elements should include the following states:
+      <ul>
+      <li>Hover state</li>
+      <li>Focus state</li>
+      <li>Disabled state</li>
+      <li>Error state</li>
+      </ul>
+    </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>All radio button elements should be associated with a <code>label</code>.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All radio button elements should have a visible keyboard focus state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable form element</li>
+      <li><code>&leftarrow;</code> <code>&rightarrow;</code> = Cycle through radio button group</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>
+      When the radio button element is focused, screen readers should announce the following:
+      <ul class="documentation__keys">
+        <li>Radio button label</li>
+        <li>Input type</li>
+      </ul>
+    </p>
+  </div>
+</div>

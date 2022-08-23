@@ -1,0 +1,7 @@
+<%= camelTitle %>:
+  version: 1.0
+  css:
+    theme:
+      dist/styles/main.css: {}
+  js:
+    dist/main.js: {}

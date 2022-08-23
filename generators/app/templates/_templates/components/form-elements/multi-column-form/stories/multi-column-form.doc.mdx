@@ -1,0 +1,50 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Multi Column Form
+
+<Canvas>
+    <Story id="forms-multi-column-form--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>
+      Multi-column forms are a series of form elements that are displayed in a multi-column format. This form includes the following modifier classes to accomdate various layouts:
+      <ul>
+        <li>
+          <code>form__item--2-col</code> should be added to form items to create a two-column layout.
+          <ul>
+            <li>This class shold be added to 2 consecutive form items to create the layout.</li>
+          </ul>
+        </li>
+        <li>
+          <code>form__item--3-col</code> should be added to form items to create a three-column layout.
+          <ul>
+            <li>This class shold be added to 3 consecutive form items to create the layout.</li>
+          </ul>
+        </li>
+      </ul>
+    </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>All form elements should be associated with a <code>label</code>.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All form elements should have a visible keyboard focus state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable form element</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>All visible form elements should be announced by screen readers.</p>
+    <h3>Tab Order Expectations</h3>
+    <p>When navigating through a multi-column, the following tab order is expected:</p>
+    <ol>
+        <li>The next tab keypress will advance to the next form element.</li>
+    </ol>
+  </div>
+</div>

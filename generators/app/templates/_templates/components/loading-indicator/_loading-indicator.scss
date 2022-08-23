@@ -1,0 +1,139 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+@keyframes rotate-360 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.input {
+
+  &__wrapper {
+    position: relative;
+    padding: 0;
+  }
+}
+
+.loading-graphic {
+
+  &__container {
+    z-index: z-index(overlay);
+    display: none;
+    transition: opacity $transition-duration, visibility $transition-duration;
+
+    &--sm {
+
+      .loading-graphic__rings,
+      .loading-graphic__rings::before,
+      .loading-graphic__rings::after { border-width: 1px; }
+
+      .loading-graphic__rings {
+        width: 26px;
+        height: 26px;
+      }
+
+      .loading-graphic__rings::before {
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        left: 3px;
+      }
+
+      .loading-graphic__rings::after {
+        top: 7px;
+        right: 7px;
+        bottom: 7px;
+        left: 7px;
+      }
+    }
+
+    &--overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        background-color: rgba(color(default, light), .75);
+        content: '';
+      }
+
+      &--fixed {
+        position: fixed;
+      }
+    }
+
+    .input__wrapper--loading & {
+      position: absolute;
+      right: 15px; // corresponds to standard input padding-right
+      bottom: 15px;
+      width: 26px; // needs dimensions when not horizontally and vertically centered
+      height: 26px; // needs dimensions when not horizontally and vertically centered
+    }
+  }
+
+  &__inner {
+    z-index: z-index(overlay) + 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__rings {
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: color(primary, base);
+    width: 100px;
+    height: 100px;
+    animation: rotate-360 2s linear infinite;
+
+    &::before,
+    &::after {
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      content: '';
+    }
+
+    &::before {
+      top: 8px;
+      right: 8px;
+      bottom: 8px;
+      left: 8px;
+      border-top-color: color(primary, base);
+      animation: rotate-360 3s linear infinite;
+    }
+
+    &::after {
+      top: 20px;
+      right: 20px;
+      bottom: 20px;
+      left: 20px;
+      border-top-color: color(primary, base);
+      animation: rotate-360 4s linear infinite;
+    }
+  }
+}
+
+
+/*
+ *   loading states
+ *
+ ***************************************************/
+
+// given to the parent container of a page, section, or element that is currently loading
+.has-loader {
+  position: relative;
+
+  .loading-graphic__container { display: block; }
+}

@@ -1,0 +1,52 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Card
+
+<Canvas>
+    <Story id="component-card--full-card-link"/>
+    <Story id="component-card--full-card-link-image"/>
+    <Story id="component-card--card-with-button-date"/>
+    <Story id="component-card--card-with-button"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Cards can display a lot of information in an organized layout, giving users teaser information and linking to detail pages if they wish to read more.</p>
+    <p>This card component comes with two options for setting up the link:</p>
+    <ol>
+      <li>The entire card can be a clickable link. With this option, the <code>card__container--link</code> modifier class should be added to the outer container.</li>
+      <li>The entire card is not clickable but includes a button to link to more information.</li>
+    </ol>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each card link should include an <code>aria-label</code> describing the link content.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Card links should have visible keyboard focus state</li>
+    </ul>
+  </div>
+
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>Control &plus; Option &plus; Shift</code> <code>&downarrow;</code> = Navigate into card link content with screen reader</li>
+      <li><code>&uparrow;</code> <code>&downarrow;</code> = Cycle through card content after navigating into card links</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>When interacting with cards, screen readers should announce the following information:</p>
+    <ul>
+      <li>Link content</li>
+      <li>Card content will be read if navigated into</li>
+    </ul>
+    <h3>Tab Order Expectations</h3>
+    <p>When navigating through a card, the following tab order is expected:</p>
+    <ol>
+      <li>The next tab keypress will advance to the next card link.</li>
+    </ol>
+  </div>
+
+</div>
+

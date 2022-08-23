@@ -1,0 +1,46 @@
+{% set layouts = {
+  twocol: ' form__item--2-col',
+  threecol: ' form__item--3-col',
+} %}
+
+<form action="#" method="POST" class="form form--multi-col">
+  <ul class="u-list-unstyled">
+    {% for input in inputs %}
+      <li class="form__item
+        {%- if input.layouts -%}
+          {%- for layout in input.layouts -%}
+            {{- layouts[layout] -}}
+          {%- endfor -%}
+        {%- endif -%}"
+      >
+        <div class="input__wrapper">
+          <label for="sample-{{ loop.index }}">{{ input.label }}</label>
+          {% if input.selectOptions %}
+            <select id="sample-{{ loop.index }}" name="sample-{{ loop.index }}">
+              {% for item in input.selectOptions %}
+                <option value="{{ loop.index }}
+                  {% if item.disabled == true %}
+                    disabled="disabled"
+                  {% endif %}
+                  {% if item.hidden == true %}
+                    hidden="hidden"
+                  {% endif %}
+                  {% if item.selected == true %}
+                    selected="selected"
+                  {% endif %}"
+                >
+                  {{ item.value }}
+                </option>
+              {% endfor %}
+            </select>
+          {% else %}
+            <input type="{{ input.type }}" value="{{ input.value }}" class="{{ input.class }}" id="sample-{{ loop.index }}">
+          {% endif %}
+        </div>
+        <!-- /.input__wrapper -->
+      </li>
+      <!-- /.form__item -->
+    {% endfor %}
+  </ul>
+</form>
+<!-- /.form -->

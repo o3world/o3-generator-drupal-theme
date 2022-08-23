@@ -1,0 +1,6 @@
+name: <%= title %>
+description: <%= description %>
+type: theme
+core_version_requirement: ^8 || ^9
+base theme: stable
+libraries:

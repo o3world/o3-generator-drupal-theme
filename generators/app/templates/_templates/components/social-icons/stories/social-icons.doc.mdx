@@ -1,0 +1,33 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Social Icons
+
+<Canvas>
+    <Story id="component-social-icons--instagram"/>
+    <Story id="component-social-icons--linkedin"/>
+    <Story id="component-social-icons--twitter"/>
+    <Story id="component-social-icons--youtube"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Social links are a group of external links to associated services pages. </p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each social link should either have an <code>aria-label</code> attribute or <code>u-sr-only</code> text that describes the context of the link.</li>
+      <li>If a social link contains an svg or image, the <code>role="presentation"</code> and <code>aria-hidden="true"</code> attributes should be included on the element.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Social links should have a visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>Enter</code> or <code>Return</code> = Navigate to the selected link</li>
+    </ul>
+  </div>
+</div>

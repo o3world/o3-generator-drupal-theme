@@ -1,0 +1,144 @@
+@import './functions';
+/*
+ * site-wide variable declaration
+ *
+ ********************************************************************************/
+
+// font declarations
+
+$brand-font: 'latoregular', geneva, tahoma, sans-serif;
+$brand-font-b: 'latobold', geneva, tahoma, sans-serif;
+$brand-font-i: 'latoitalic', geneva, tahoma, sans-serif;
+$brand-font-bi: 'latobold_italic', geneva, tahoma, sans-serif;
+$brand-font-light: 'latolight', geneva, tahoma, sans-serif;
+$brand-font-light-i: 'latolight_italic', geneva, tahoma, sans-serif;
+$base-font: $brand-font;
+$base-font-size: 16;
+$base-line-height: 1.5;
+
+// Spacing
+$small-spacing: 10px;
+$base-spacing: 15px;
+
+
+/*
+ * defined color map
+ *
+ ************************************************************/
+
+$colors: (
+  primary: (
+    base: #c00,
+    hover: #990400
+  ),
+  secondary: (
+    base: #1972e9,
+    dark: #1a60bd,
+    hover: #87b3ef
+  ),
+  neutral: (
+    lightest: #f4f4f4,
+    lighter: #dcdcdc,
+    light: #929292,
+    base: #767676,
+    dark: #2f2f2f
+  ),
+  success: (
+    base: #7ed321
+  ),
+  warning: (
+    base: #daa520
+  ),
+  default: (
+    dark: #000,
+    light: #fff,
+    transparent-medium: rgb(0 0 0 / 50%),
+  ),
+  baseColor: (
+    base: #ff9800
+  ),
+);
+
+/*
+ * color assignments
+ *
+ ****************************************/
+
+$site-background-color: color(default, light);
+$text-color: color(neutral, dark);
+$link-color: color(secondary);
+$link-color-hover: color(secondary, dark);
+$border-color: color(neutral, lighter);
+
+
+/*
+ * defined z-indices map
+ *
+ ************************************************************/
+
+$z-indexes: (
+  pit:        -9999,
+  basement:   0,
+  default:    1,
+  breakout:   10,
+  menus:      100,
+  dropdown:   2000,
+  overlay:    3000,
+  modal:      4000
+);
+
+/*
+ * Breakpoint Sizes
+ *
+ ************************************************************/
+
+$breakpoints: (
+  small: 480,
+  medium: 768,
+  large: 992,
+);
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+
+/*
+ * global properties
+ *
+ ************************************************************/
+
+$site-header-height-xs: 88px; // 40px logo height + 24px padding top and bottom
+$site-header-height-md: 102px; // 54px logo height + 24px padding top and bottom
+
+$transition-easing: cubic-bezier(.475,.425,0,.995);
+$transition-duration: .25s;
+
+$box-shadow-default: 0 2px 24px 0 rgba(#000, .15);
+$box-shadow-hover: $box-shadow-default, 0 1px 10px 0 rgba(#000, .15);
+
+
+/* === Easing functions === */
+
+$ease-in-sine: cubic-bezier(.47, 0, .745, .715);
+$ease-out-sine: cubic-bezier(.39, .575, .565, 1);
+$ease-in-out-sine: cubic-bezier(.445, .05, .55, .95);
+$ease-in-quad: cubic-bezier(.55, .085, .68, .53);
+$ease-out-quad: cubic-bezier(.25, .46, .45, .94);
+$ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);
+$ease-in-cubic: cubic-bezier(.55, .055, .675, .19);
+$ease-out-cubic: cubic-bezier(.215, .61, .355, 1);
+$ease-in-out-cubic: cubic-bezier(.645, .045, .355, 1);
+$ease-in-quart: cubic-bezier(.895, .03, .685, .22);
+$ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+$ease-in-out-quart: cubic-bezier(.77, 0, .175, 1);
+$ease-in-quint: cubic-bezier(.755, .05, .855, .06);
+$ease-out-quint: cubic-bezier(.23, 1, .32, 1);
+$ease-in-out-quint: cubic-bezier(.86, 0, .07, 1);
+$ease-in-expo: cubic-bezier(.95, .05, .795, .035);
+$ease-out-expo: cubic-bezier(.19, 1, .22, 1);
+$ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+$ease-in-circ: cubic-bezier(.6, .04, .98, .335);
+$ease-out-circ: cubic-bezier(.075, .82, .165, 1);
+$ease-in-out-circ: cubic-bezier(.785, .135, .15, .86);
+$ease-in-back: cubic-bezier(.6, -.28, .735, .045);
+$ease-out-back: cubic-bezier(.175, .885, .32, 1.275);
+$ease-in-out-back: cubic-bezier(.68, -.55, .265, 1.55);

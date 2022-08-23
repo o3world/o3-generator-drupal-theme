@@ -1,0 +1,71 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.toggle-btn {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px 0;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    border: 0;
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+
+    // Switch styles
+    &::before,
+    &::after {
+      display: block;
+      margin: 0 3px;
+      background: color(neutral, lighter);
+      transition: 100ms cubic-bezier(.4, 0, .2, 1);
+      content: '';
+    }
+
+    &::before {
+      border-radius: 10px;
+      width: 50px;
+      height: 20px;
+      opacity: .6;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,20%), 0 0 2px rgba(0,0,0,40%);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      transform: translate(0, -50%);
+    }
+
+    &[role='switch'][aria-checked='true'] {
+      &::before,
+      &::after {
+        background: rgba(color(primary, base), 1);
+      }
+
+      &::after {
+        transform: translateX(50px) translateX(-100%) translateY(-50%);
+      }
+    }
+  }
+
+  &__label {
+    @include font-size($base-font-size);
+  }
+}

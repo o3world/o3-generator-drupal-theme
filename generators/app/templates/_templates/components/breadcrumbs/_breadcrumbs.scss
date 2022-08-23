@@ -1,0 +1,28 @@
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+
+  &__breadcrumb {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+
+    &:not(:last-child) {
+
+      &::after {
+        padding: 0 .5rem;
+        color: color(neutral, base);
+        content: '/';
+      }
+    }
+  }
+
+  &__breadcrumb-link {
+
+    &[aria-current] {
+      color: color(neutral, dark);
+    }
+  }
+}

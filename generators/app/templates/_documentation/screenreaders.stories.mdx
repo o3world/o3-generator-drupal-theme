@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Documentation / Screen Readers" />
+
+# Screen readers
+
+## Tags
+
+```
+<div>An element without any screen reader utility class.</div>
+<div class="u-hidden">Hide and element from the screen and from screen readers.</div>
+<div class="u-sr-only">Hide an element from the screen but visible to screen readers.</div>
+<div class="u-sr-only u-focusable">Hide an element from the screen but visible to screen readers. Is allowed to be focused via keyboard.</div>
+<div class="u-sr-reveal">Show an element on the screen and on screen readers.</div>
+```
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>In order to account for accessibility as a whole, screen readers need to be considered. There are four classes that can be used to account for different intended behavior.</p>
+    <h3>Screen Reader Utility Classes</h3>
+    <ul>
+      <li><code>.u-hidden</code> hides an element from the screen and from screen readers.</li>
+      <li><code>.u-sr-only</code> hides an element from the screen but visible to screen readers.</li>
+      <li><code>.u-focusable</code> hides an element from the screen but visible to screen readers. Is allowed to be focused via keyboard.</li>
+      <li><code>.u-sr-show</code> shows an element on the screen and on screen readers..</li>
+    </ul>
+  </div>
+</div>

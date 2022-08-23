@@ -1,0 +1,19 @@
+
+<div class="tabs-to-accordion" data-tabs-container>
+  <ul class="tabs-to-accordion__list" role="tablist" aria-label="{{ heading }}">
+    {% for tab in tabs %}
+      <li class="tabs-to-accordion__list-item" data-tabs-button-wrap>
+        <button class="tabs-to-accordion__button" role="tab" aria-selected="false" data-tabs-button>
+          {{ tab.heading }}
+        </button>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="tabs-to-accordion__window" data-tabs-panel-window>
+    {% for tab in tabs %}
+      <div class="tabs-to-accordion__panel" role="tabpanel" data-tabs-panel data-tabs-panel-active="false">
+        {{ tab.content }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

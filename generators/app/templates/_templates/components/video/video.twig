@@ -1,0 +1,13 @@
+<div class="video" data-video-inline>
+  <div class="video__overlay">
+    <button class="video__play-btn" aria-label="Play Video">
+      <svg viewBox="0 0 12.86 25.72" role="presentation" aria-hidden="true">
+        <polygon points="0,0 12.86,12.86 0,25.72"/>
+      </svg>
+    </button>
+    <img src="{{ placeholder.src }}" srcset="{{ placeholder.srcset }}" alt="{{ placeholder.alt }}" />
+  </div>
+  <div class="video__content">
+    <iframe src="{{ 'https://www.youtube.com/embed/' ~ youtubeId ~ '?enablejsapi=1'}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>

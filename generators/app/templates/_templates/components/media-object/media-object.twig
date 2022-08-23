@@ -1,0 +1,46 @@
+{% set layouts = {
+  top: ' media-object--image-top',
+  bottom: ' media-object--image-bottom',
+  left: ' media-object--image-left',
+  right: ' media-object--image-right',
+} %}
+
+{% for object in mediaObjects %}
+	<section
+    class="media-object
+      {%- if object.layouts -%}
+        {%- for layout in object.layouts -%}
+          {{- layouts[layout] -}}
+        {%- endfor -%}
+      {%- endif -%}"
+    role="group"
+    aria-labelledby="media-object-title"
+  >
+		<div class="media-object__image-container">
+			<img
+        src="{{ object.image.src }}"
+        class="media-object__image"
+        alt="{{ object.image.alt }}"
+      >
+		</div>
+		<div class="media-object__content-container">
+			<h2
+        class="media-object__title"
+        id="media-object-title"
+      >
+				{{- object.title -}}
+			</h2>
+			<p class="media-object__body">{{ object.text }}</p>
+			{% if object.cta %}
+				<a
+          href="{{ object.cta.href }}"
+          class="media-object__cta"
+          aria-label="{{ object.cta.label }}"
+          target="_blank"
+        >
+					{{- object.cta.text -}}
+				</a>
+			{% endif %}
+		</div>
+	</section>
+{% endfor %}

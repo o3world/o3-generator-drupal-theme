@@ -1,0 +1,64 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.modal {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+
+  &__overlay {
+    z-index: z-index(overlay);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0, 60%);
+  }
+
+  &__container {
+    position: relative;
+    padding: 30px;
+    max-width: 500px;
+    max-height: 100vh;
+    overflow-y: auto;
+    background-color: #fff;
+  }
+
+  &__text-body {
+    max-height: 350px;
+    overflow-y: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+      transition: fill $transition-duration $transition-easing;
+    }
+
+    &:hover,
+    &:focus {
+
+      svg {
+        fill: color(primary, base);
+      }
+    }
+  }
+}

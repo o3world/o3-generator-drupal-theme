@@ -1,0 +1,63 @@
+/*
+ * accordion styles
+ *
+ *****************************************************************************/
+
+.accordion {
+  margin: 5px; // allows room to display full border when focused / Safari
+
+  &__panel + &__panel {
+    border-top: 1px solid color(neutral, lighter);
+  }
+
+  &__header {
+    margin: 0;
+  }
+
+  &__button {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    border: 0;
+    padding: 20px 14px;
+    width: 100%;
+    background-color: color(neutral, lightest);
+    text-align: left;
+    appearance: none;
+
+    &:focus { z-index: 1; } // allows the full focus state border to be visible
+  }
+
+  &__arrow {
+    width: 14px;
+    height: 14px;
+    transition: .2s ease-in-out;
+
+    [aria-expanded='true'] & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__window {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: .2s ease-in-out;
+  }
+
+  &__content {
+    padding: 20px 14px;
+  }
+
+  :nth-child(1) {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

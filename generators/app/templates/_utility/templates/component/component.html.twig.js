@@ -1,0 +1,12 @@
+module.exports = (kebabCaseName) => ({
+  content: `Use a Twig include or embed to integrate your component with Drupal using template overrides.
+* https://www.drupal.org/docs/theming-drupal/twig-in-drupal/working-with-twig-templates
+* https://twig.symfony.com/doc/3.x/tags/include.html
+* https://twig.symfony.com/doc/3.x/tags/embed.html
+* https://www.youtube.com/watch?v=JJrGfIfNCyk&list=PLu-MxhbnjI9oEF9uR59Sq66_7Pf4guwG1&index=19
+Example:
+{% include '@<%= pascalTitle %>/components/${kebabCaseName}/${kebabCaseName}.twig' %}
+
+`,
+  extension: '.html.twig',
+});

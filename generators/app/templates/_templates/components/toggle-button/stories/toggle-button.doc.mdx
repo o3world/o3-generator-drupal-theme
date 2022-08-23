@@ -1,0 +1,31 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Toggle Button
+
+<Canvas>
+    <Story id="component-toggle-button--default"/>
+</Canvas>
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Toggle buttons are used to determine when something is on or off. All toggle buttons are grouped within an unordered list and each toggle buttons parent is a list item.</p>
+    <p>This toggle button comes with a configuration attribute, <code>data-toggle-button</code>, that links triggers the JavaScript click event.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each toggle button should include a <code>role="switch"</code> attribute.</li>
+      <li>Each toggle button should include an <code>aria-checked</code> attribute. If the button is toggled off, set <code>aria-checked="false"</code>. If the button is toggled on, set <code>aria-checked="true"</code>.</li>
+      <li>Each toggle button should include an <code>aria-labelledby="id"</code> attribute. That value should match the id of the toggle button label.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Toggle buttons should have a visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Enter</code> or <code>Space</code> = Toggle button</li>
+      <li><code>Tab</code> = Move to next focusable element</li>
+    </ul>
+  </div>
+</div>

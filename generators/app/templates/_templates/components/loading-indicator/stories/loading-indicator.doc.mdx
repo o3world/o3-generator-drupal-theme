@@ -1,0 +1,24 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Loading Indicator
+
+<Canvas>
+    <Story id="static-html-loading-indicator--default"/>
+</Canvas>
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>A loading graphic can appear when a page, section or component is in a loading state.</p>
+    <p>Loading graphics should include <code>u-sr-only</code> text to inform screen reader users what is going on. Additionally, loading graphics should exist in the DOM before the spinner is required because the change or addition of content inside these elements trigger the screen reader notification, not the addition of those attributes on the element.</p>
+    <p>The default styles for this loading graphic accomodate full page loaders, and the <code>loading-graphic--sm</code> modifier class should be included for inline loaders.</p>
+    <p>The state class <code>has-loader</code> can be dynamically given to the body or the parent container of a section or component while it is in a loading state.</p>
+  </div>
+  <div class="documentation__col">
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each graphic container should have an <code>aria-live</code> attribute to create an accessible alert event.</li>
+      <li>For full page loading graphics, use <code>aria-live="assertive"</code> to immediately communicate to users to changes on the page.</li>
+      <li>For inline loading graphics, such as a search bar loader, use <code>aria-live="polite"</code> to update users at a graceful interval, when the stop typing in the search bar, for example.</li>
+    </ul>
+  </div>
+</div>

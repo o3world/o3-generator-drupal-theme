@@ -1,0 +1,49 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Dropdown Nav
+
+<Canvas>
+    <Story id="static-html-dropdown-nav--default"/>
+</Canvas>
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Dropdown navigation presents a list of options to a user when activated by hovering or focusing on the parent links.</p>
+    <p>This Dropdown Navigation comes with two configuration attributes. The <code>data-dropdown-item</code> attribute is used to flag top level navigation list items, and the <code>data-dropdown-link</code> attribute is used to flag thier respective child main link. This assists in identification for the cooresponding Javascript keyboard functionality.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>If a navigation item has a nested list, the <code>aria-expanded="false"</code> attribute should be added as a default state. When activated, the attribute should change to <code>aria-expanded="true"</code>.</li>
+      <li>If a navigation item has a nested list, it should include an <code>aria-label="submenu name"</code> attribute.</li>
+      <li>The dropdown menu visibility should be toggled using the <code>hidden</code> attribute.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Each nav item has a focus state. If there is a nested list, the list is expanded on focus and the sub items are then added to the tab index.</li>
+    </ul>
+  </div>
+
+  <div class="documentation__col">
+    <h3>Screen Reader Expectations</h3>
+    <p>When interacting with dropdown navigation, screen readers should announce the following:</p>
+    <ul>
+        <li>Main Menu</li>
+        <li>Menu items, total number of list items</li>
+        <li>If there is a nested list, this will be announced as a popup list</li>
+        <li>Current state of menu link - expanded or collapsed</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>Tab</code> = Expand/collapse dropdown</li>
+      <li><code>&leftarrow;</code> <code>&rightarrow;</code> = Cycle through top level links when top level links are focused</li>
+    </ul>
+    <h3>Tab Order Expectations</h3>
+    <p>When navigating through dropdown menu navigation, the following tab order is expected:</p>
+    <ol>
+        <li>Top level menu items</li>
+        <li>If there is a nested list, the sub-items are added to the tablist</li>
+    </ol>
+  </div>
+
+</div>
+

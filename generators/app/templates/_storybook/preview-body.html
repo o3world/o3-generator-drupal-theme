@@ -1,0 +1,9 @@
+<script>
+  //insert main js file into story, after story loads for selectors to find their dom elements.
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const root = document.getElementById('root')
+    var newScript = document.createElement("script");
+    newScript.src = "/main.js";
+    root.appendChild(newScript);
+  });
+</script>

@@ -1,0 +1,39 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.cta {
+  padding: 60px 0;
+  background-color: color(neutral, lightest);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+
+  &__header {
+
+    &::after {
+      display: block;
+      margin: 20px auto 0;
+      width: 100px;
+      height: 1px;
+      background-color: color(neutral, light);
+      content: '';
+    }
+  }
+
+  p {
+    max-width: 100%;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}

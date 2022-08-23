@@ -1,0 +1,22 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Spacing
+
+<Canvas>
+    <Story id="static-html-spacing--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Spacing utility classes are used to standardize margin in padding in a centralized lcoation. Each class, <code>.u-margin</code> and <code>.u-padding</code>, has eight modifier classes that handle both direction (top, right, bottom, and left) and size (small, medium, large, and extra large).</p>
+    <p>If just a size is used as a modifier, the margin or padding will be applied to all sides. If the intention is to add margin or padding to a specific side, the direction modifier, (e.g. <code>-left</code>), should be applied before the size modifer, (e.g <code>-md</code>). The end result would look like this: <code>u-margin-left-md</code>.</p>
+    <h3>Spacing Utility Classes</h3>
+    <ul>
+      <li>The base margin class is <code>.u-margin</code>.</li>
+      <li>The base padding class is <code>.u-padding</code>.</li>
+      <li>For directional modifiers, both parent classes have access to the <code>-top</code>, <code>-right</code>, <code>-bottom</code>, and <code>-left</code> modifiers.</li>
+      <li>For size modifiers, both parent classes have access to the <code>-sm</code>, <code>-md</code>, <code>-lg</code>, and <code>-xl</code> modifiers.</li>
+    </ul>
+  </div>
+</div>

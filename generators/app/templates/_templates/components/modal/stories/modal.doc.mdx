@@ -1,0 +1,36 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Modal
+
+<Canvas>
+    <Story id="component-modal--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>An accessible modal treatment for displaying additional content in a floating window. This modal utilizes the <a href="https://micromodal.now.sh/" target="_blank">Micromodal.js</a> library.</p>
+    <p>This modal comes with a configuration attribute, <code>data-micromodal-close</code>, that should be added to the <code>modal__overlay</code> to allow users to close the modal when they click on the overlay.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each modal should have a unique id attribute.</li>
+      <li>If the modal is visible, the <code>modal__container</code> should have <code>aria-hidden</code> set to false. If the modal is not visible, <code>aria-hidden</code> is set to true. The Micromodal plugin takes care of these changes.</li>
+      <li>The <code>modal__container</code> should include a <code>role="dialog"</code> attribute.</li>
+      <li>The <code>modal__container</code> should include an <code>aria-labelledby</code> attribute. If the modal does not include a heading element, <code>aria-labelledby</code> should be set to the unique modal id.</li>
+      <li>All buttons should include an <code>aria-label</code> attribute to define the intention of the relative button.</li>
+      <li>Close buttons within a modal should include the <code>data-micromodal-close</code> attribute to trigger the close event.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Modal open/close buttons should have visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Enter</code> or <code>Space</code> = Open/close modal</li>
+      <li><code>Esc</code> = Close modal</li>
+      <li><code>Tab</code> = Move to next focusable element</li>
+    </ul>
+  </div>
+</div>

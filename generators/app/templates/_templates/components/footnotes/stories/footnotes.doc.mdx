@@ -1,0 +1,58 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Footnotes
+
+<Canvas>
+    <Story id="component-footnotes--default"/>
+</Canvas>
+
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Footnotes are used to cite references or to add additional information or commentary on a designed part of the text above it. Each footnote should appear at the bottom of the page in an ordered list that corresponds to its numbered in-text reference.</p>
+    <p>When acting as citations for quotes or references to other sources, footnotes should contain a link to the original source and its title.</p>
+    <p>This footnote example is adapted from <cite><a href="https://www.sitepoint.com/accessible-footnotes-css/" target="_blank" rel="noopener noreferer"> Accessible Footnotes with CSS.</a></cite></p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Footnote references in page content use an anchor tag with an <code>href</code> attribute that matches the <code>id</code> on the footnote itself. These have the class <code>.footnote__label</code> and the attribute <code>aria-describedby="footnote-container-label"</code>.</li>
+      <li>The page footer should include a heading with <code>id="footnote-container-label"</code>. This serves as a description for the footnote references in the main content.</li>
+      <li>Footnotes that link to external sources should have an <code>aria-describedby</code> attribute indicating an external site.</li>
+      <li>Links from footnotes back to their reference in page content should have an <code>aria-label</code> of "Back to Content". Links in the text must have an <code>id</code> that matches the <code>href</code> on the back-to-content link in the footnote so readers can return to the correct location.</li>
+    </ul>
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Links should have a visible keyboard focus state.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>&leftarrow;</code> <code>&rightarrow;</code> = move to next footnote link in page content</li>
+      <li><code>Enter</code> or <code>Return</code> = Navigate to the selected link</li>
+      <li><code>Control &plus; Option</code> <code>&leftarrow;</code> <code>&rightarrow;</code> = Navigate through content with screen reader</li>
+    </ul>
+    <h3>Screen Reader Expectations</h3>
+    <p>When interacting with in-content links to footnotes, screen readers will announce the following:</p>
+    <ol>
+        <li>Link text</li>
+        <li>Counter number</li>
+        <li>Content of footnote-label &#40;from aria-describedby attribute.&#41;</li>
+    </ol>
+    <p>When interacting with the footnote container, screen readers will announce the following:</p>
+    <ol>
+        <li>List, number of items</li>
+        <li>Heading</li>
+        <li>Items number</li>
+        <li>Link text</li>
+        <li>Aria-label attributes</li>
+      </ol>
+    <h3>Tab Order Expectations</h3>
+    <ul>
+        <li>Footnote links are tabbable in the order in which they appear on the page.</li>
+    </ul>
+  </div>
+
+</div>
+

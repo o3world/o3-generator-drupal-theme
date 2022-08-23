@@ -1,0 +1,120 @@
+@import './main';
+
+.style-guide {
+  // Clear Fix
+  &__clear-fix-container {
+    border: 3px solid color(primary, base);
+    padding: 5px;
+  }
+
+  // List Layout
+  &__list-layout-list {
+
+    &--default {
+      background-color: color(secondary, base);
+    }
+
+    &--unstyled {
+      background-color: color(primary, base);
+    }
+
+    &--inline {
+      background-color: color(success, base);
+    }
+  }
+
+  // Spacing
+  &__spacing-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid color(default, dark);
+  }
+
+  &__spacing-item-container {
+    border: 1px solid color(default, dark);
+    height: 300px;
+
+    &--padding {
+      width: 50%;
+      background-color: color(success, base);
+    }
+
+    &--margin {
+      width: calc(100% / 3);
+      background-color: color(basecolor, base);
+
+      .u-margin-md {
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+      }
+
+      .u-margin-top-md,
+      .u-margin-bottom-md {
+        width: 100%;
+        height: calc(100% - 15px);
+      }
+
+      .u-margin-right-md,
+      .u-margin-left-md {
+        width: calc(100% - 15px);
+        height: 100%;
+      }
+    }
+  }
+
+  &__spacing-item {
+    width: 100%;
+    height: 100%;
+    background-color: color(secondary, base);
+  }
+
+  &__loading-indicator {
+    position: relative;
+    border: 1px solid color(neutral, light);
+    height: 400px;
+  }
+
+  &__loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Notifications
+.notification {
+  margin: 15px 0;
+}
+
+// Forms
+[type='text'],
+[type='email'],
+[type='tel'],
+[type='search'],
+[type='number'],
+select,
+textarea {
+
+  &.hovered {
+    border-color: color(secondary, hover);
+  }
+
+  &.focused {
+    outline: none;
+    border-color: color(secondary, base);
+  }
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+
+  &.hovered {
+    background-color: color(secondary, hover);
+  }
+
+  &.focused {
+    background-color: color(secondary, base);
+  }
+}

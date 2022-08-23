@@ -1,0 +1,29 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Tool Tip
+
+<Canvas>
+    <Story id="component-tool-tip--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>A Tooltip is a small information box that appears on hover and provides further information about the respective section.</p>
+    <p>This tooltip comes with two configuration attributes. The <code>data-tooltip-area</code> attribute should be added to the outer container of the tooltip to track where the tooltip will trigger and move. The <code>data-tooltip</code> attribute should be added to the tooltip content.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>If the tooltip is visible, it should have <code>aria-expanded</code> set to true. If the tooltip is not visible, <code>aria-expanded</code> is set to false.</li>
+      <li>Each tooltip should have the attribute <code>tabindex="0"</code>.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Tooltips should have a visible keyboard focus state</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+      <li><code>Tab</code> = Activate tooltip</li>
+    </ul>
+  </div>
+</div>

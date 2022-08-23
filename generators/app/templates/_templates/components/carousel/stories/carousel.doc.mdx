@@ -1,0 +1,61 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Carousel
+
+  <div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Carousels show a collection of items one at a time. They are also known as “slideshows” and “sliders”. Typical uses of carousels include scrolling news headlines, featured articles on home pages, and image galleries. This carousel has been adapted from the following example: <a href= "https://www.w3.org/WAI/tutorials/carousels/">Web Accessibility Tutorials / Carousels</a>.</p>
+    <p>This carousel includes modifier classes to accomodate various types of content:</p>
+    <ul>
+      <li><code>carousel--image</code> should be added to the outer container when the carousel includes only images.</li>
+      <li><code>carousel--image-text</code> should be added to the outer container when the carousel includes images with text.</li>
+      <li><code>carousel--text</code> should be added to the outer container when the carousel includes text-only content.</li>
+    </ul>
+    <p>If the carousel is configured to include additional navigation buttons below the slides, <code>has-slidenav</code> will be added to the outermost container.</p>
+    <h3>JavaScript Configuration Settings</h3>
+    <p>This carousel comes with the following settings that can be configured in the accompanying JavaScript file:</p>
+    <ul>
+      <li><code>slidenav</code>: Set this attribute to <code>true</code> to add additional navigation buttons for each item in the carousel, allowing screen reader users to get an overview of carousel content, where they are in the sequence and will enable them to navigate directly to any item.</li>
+      <li><code>animate</code>: Set this attribute to <code>true</code> to include a play/stop button in the slide navigation. Otherwise, it should be set to <code>false</code>. </li>
+      <li><code>startAnimated</code>: Set this attribute to <code>true</code> to autoplay the carousel on page load. Otherwise, it should be set to <code>false</code>.</li>
+      <li><code>announceItem</code>: Set this attribute to <code>true</code> to include an <code>aria-live="polite"</code> attribute on the carousel navigation, informing screen reader users what item is currently active.</li>
+    </ul>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>Each carousel should have a unique <code>id</code> attribute.</li>
+      <li>Each carousel should be enclosed in a labeled region with an <code>aria-labelledby</code> attribute to define the region.</li>
+      <li>Each inactive carousel item should include the <code>aria-hidden="true"</code> attribute. This attribute should be removed when a carousel item is active.</li>
+      <li>When a carousel item is focused, it should have a <code>tabindex=“-1"</code>.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>All navigation buttons should have a visible keyboard focus state.</li>
+      <li>Keyboard focus does not move when the carousel advances automatically.</li>
+      <li>Keyboard focus does not move when the previous or next buttons are used.</li>
+      <li>When users interact with navigation buttons focus should be on the selected slide.</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+      <ul class="documentation__keys">
+      <li><code>Tab</code> = Move to next focusable element</li>
+      <li><code>Shift &plus; Tab</code> = Move to previous focusable element</li>
+      <li><code>Enter</code> or <code>Space</code> = Navigate to the Previous or Next slide</li>
+      <li><code>Control &plus; Option</code> <code>&leftarrow;</code> <code>&rightarrow;</code> = Navigate through item content with screen reader</li>
+    </ul>
+    <h3>Screenreader Expectations</h3>
+    <ul>
+      <li>Screenreaders will announce all buttons and actionable elements.</li>
+      <li>When the previous or next button is focused, screenreaders will announce the item number in sequence.</li>
+      <li>When using the slide navigation buttons, screenreaders will announce the item number and read the content within the slide.</li>
+    </ul>
+    <h3>Tab Order Expectations</h3>
+    <p>Once inside the section containing of the carousel, the tab order will be as follows&#58;</p>
+    <ol>
+      <li>Previous button</li>
+      <li>Next button</li>
+      <li>Buttons in the slide navigation</li>
+    </ol>
+  </div>
+</div>

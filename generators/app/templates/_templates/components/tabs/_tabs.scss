@@ -1,0 +1,60 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+/*
+ * tab styles (tabs on desktop and mobile)
+ *
+ *****************************************************************************/
+
+.tabs {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+
+  &__list-item {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+
+    & + & {
+      border-left: 1px solid color(neutral, lighter);
+    }
+  }
+
+  &__button {
+    display: block;
+    border: 0;
+    border-bottom: 1px solid color(neutral, lighter);
+    padding: 10px 20px;
+    width: 100%;
+    background-color: color(neutral, lightest);
+    cursor: pointer;
+    appearance: none;
+
+    @media (min-width: $breakpoint-sm) {
+      border-top: 1px solid color(neutral, lighter);
+    }
+
+    &[aria-selected='true'] {
+      background-color: color(default, light);
+
+      @media (min-width: $breakpoint-sm) {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__panel {
+    display: none;
+
+    &[data-tabs-panel-active='true'] {
+      display: block;
+    }
+  }
+}

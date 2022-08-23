@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link media="all" rel="stylesheet" href="{{ '/styles/scripts.css'|path }}?t={{ 'now'|date('U') }}">
+    <title>Preview Layout</title>
+  </head>
+  <body>
+    {{ yield }}
+    <script src="{{ '/scripts.js'|path }}"></script>
+  </body>
+</html>

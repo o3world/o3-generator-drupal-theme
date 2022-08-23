@@ -1,0 +1,25 @@
+<article class="footnote__counter">
+  <p>To understand how some of the thoughts evolved around this design system, watch Mike Monteiro’s talk about design destroying the world,
+    <sup><a href="#footnote-1" class="footnote__label" id="footnote-ref-1" aria-describedby="footnote-container-label" data-reference="1"><span class="u-sr-only">Link to footnote</span></a></sup>Aaron Gustafson’s presentations on performance as a user experience,
+    <sup><a href="#footnote-2" class="footnote__label" id="footnote-ref-2" aria-describedby="footnote-container-label" data-reference="2"><span class="u-sr-only">Link to footnote</span></a></sup>Una Kravets’ image optimization presentation,
+    <sup><a href="#footnote-3" class="footnote__label" id="footnote-ref-3" aria-describedby="footnote-container-label" data-reference="3"><span class="u-sr-only">Link to footnote</span></a></sup>Damien Senger describing readability on the web,
+    <sup><a href="#footnote-4" class="footnote__label" id="footnote-ref-4" aria-describedby="footnote-container-label" data-reference="4"><span class="u-sr-only">Link to footnote</span></a></sup>and Dafydd Henke-Reed’s elegant accessibility presentation.
+    <sup><a href="#footnote-5" class="footnote__label" id="footnote-ref-5" aria-describedby="footnote-container-label" data-reference="5"><span class="u-sr-only">Link to footnote</span></a></sup></p>
+    <p>Of course, there are many ways to use footnotes.<sup><a href="#footnote-6" class="footnote__label" id="footnote-ref-6" aria-describedby="footnote-container-label" data-reference="6"><span class="u-sr-only">Link to footnote</span></a></sup></p>
+
+  <footer class="footnote__container">
+    <h2 class="u-sr-only" id="footnote-container-label">Footnotes</h2>
+    <ol>
+    {% for footnote in footnotes %}
+      <li class="{{ footnote.classList }}" id="{{ footnote.linkId }}">
+        {% if (footnote.linkHref) %}
+          <a href="{{ footnote.linkHref }}" target="_blank" aria-describedby="{{ footnote.describedBy }}" class="footnote__source-link" data-footnote="{{ footnote.counter  }}">{{ footnote.linkText }}</a>,
+        {% endif %}
+        <span>{{ footnote.text }}</span>
+        <a href="{{ footnote.backLinkHref }}" aria-label="{{ footnote.backLinkAriaLabel }}" class="footnote__back-link" data-back-link={{ footnote.counter}}>
+        {{ footnote.backLinkContent }}</a>
+      </li>
+    {% endfor %}
+    </ol>
+  </footer>
+</article>

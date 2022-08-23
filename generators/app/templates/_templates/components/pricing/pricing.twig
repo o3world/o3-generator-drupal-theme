@@ -1,0 +1,16 @@
+{% for price in prices %}
+  <div class="u-margin-hug-top price__container">
+    {% if price.sale %}
+      <del class="price__value price__value--slashed">
+        <span class="u-sr-only">Price Reduced From: </span>${{ price.sale.price }}
+      </del>
+      <ins class="price__value price__value--reduced">
+        <span class="u-sr-only">Sale Price: </span>${{ price.sale.salePrice }}
+      </ins>
+    {% else %}
+      <p class="price__value">
+        <span class="u-sr-only">Price: </span>${{ price.price }}
+      </p>
+    {% endif %}
+  </div>
+{% endfor %}

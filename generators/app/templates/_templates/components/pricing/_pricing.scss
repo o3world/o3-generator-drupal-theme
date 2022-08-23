@@ -1,0 +1,56 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.price {
+
+  &__container {
+    display: flex;
+    flex-flow: column nowrap;
+    order: 2;
+
+    @media (max-width: $breakpoint-lg) {
+      width: 100%;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      order: 1;
+    }
+  }
+
+  &__value {
+    @include line-height(20, 32);
+    @include font-size(20);
+
+    order: 2;
+    margin: 0 0 10px;
+    width: 100%;
+    font-family: $brand-font-b;
+    color: color(neutral, dark);
+
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
+      text-align: right;
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      order: 1;
+      text-align: left;
+    }
+
+    &--slashed {
+      @include line-height(12, 15);
+      @include font-size(12);
+
+      order: 2;
+      text-decoration: line-through;
+    }
+
+    &--reduced {
+      order: 1;
+      margin-bottom: 0;
+      text-decoration: none;
+      color: color(primary, base);
+    }
+  }
+}

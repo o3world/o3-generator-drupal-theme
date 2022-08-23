@@ -1,0 +1,32 @@
+import { Story, Canvas} from '@storybook/addon-docs';
+
+# Button
+<Canvas>
+  <Story id="component-buttons--default-button"/>
+</Canvas>
+
+## Variations
+### Disabled
+<Story id="component-buttons--disabled-button"/>
+
+### With an Icon
+
+<Story id="component-buttons--with-icon-button"/>
+
+### A linked button
+<Story id="component-buttons--linked-button"/>
+
+## Documetation
+
+### Usage
+Buttons enable users to trigger an action or event. Styling is done via CSS and can be applied to `button` and `a` elements.
+
+### Labelling Expectations
+If the button includes an icon, the icon should include `role="presentation"` and `aria-hidden="true"`
+
+### Focus Expectations
+Buttons should have a visible keyboard focus state
+All keyboard interactions relate to when buttons are focused
+
+### Keyboard Expectations
+`Enter` or `Space` = Activate button

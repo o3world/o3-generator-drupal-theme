@@ -1,0 +1,23 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Landmarks
+
+<Canvas>
+    <Story id="static-html-landmarks--default"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>Aria landmarks are supplementary, semantic markup used by assistive technology to quickly identify and navigate the contents of a webpage. The majority of the guiding principles and rules surrounding landmarks can be referenced at <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html" target="_blank">www.w3.org</a>.</p>
+    <h3>General Guidelines</h3>
+    <ul>
+      <li>All top-level elements, or direct children of the <code>body</code> tag, should either be a landmark element or include a <code>role</code> attribute.</li>
+      <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Navigation_Role#Accessibility_concerns" target="_blank">too many landmark elements</a> or unnecessary aria attributes can make the overall layout of a page difficult to understand for screen reader users.</li>
+      <li>The <code>aside</code> landmark should be used for supplementary content; It should <em>not</em> be used for sidebar navigation.</li>
+      <li>HTML5 elements often come with default role attributes, so proper integration of those elements should take precendence of the use of landmark roles. For example, <code>form</code>, <code>main</code> and <code>nav</code> tags should be used instead of <code>role="form"</code>, <code>role="main"</code> or <code>role="navigation"</code> in most situations. </li>
+      <li>The <code>aria-label</code> attribute overrides whatever text is within an element when read by assistive technology. Use it when you'd like to get more descriptive for the purpose of screen readers and the like. For example, a 'Read More' link can be misleading without visual context as it sits right under a block of text. A visually impaired user may ask themselves "Read more of what?". Use an <code>aria-label</code> attribute to provide a more thorough explanation as to what that 'Read More' link is refering to. IE <code>aria-label="Read the full article"</code>. Additionally, it should be noted that an <code>aria-label</code> attribute is redundant in the case of most section landmarks that already have a header within it.</li>
+      <li>It is better not to landmark than to landmark incorrectly. If all else fails, use a <code>div</code> element.</li>
+    </ul>
+  </div>
+</div>

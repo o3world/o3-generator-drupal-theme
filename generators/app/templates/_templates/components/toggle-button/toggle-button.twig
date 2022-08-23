@@ -1,0 +1,14 @@
+<ul class="toggle-btn__list">
+  {% for button in toggleButtons %}
+    <li class="toggle-btn__item">
+      <button class="toggle-btn__btn" role="switch" aria-checked="true" aria-labelledby="toggle-label_{{loop.index}}" data-toggle-button>
+        <span class="u-sr-only">On</span>
+        <span class="u-sr-only">Off</span>
+        <span class="toggle-btn__label" id="toggle-label_{{loop.index}}">{{ button.label }}</span>
+      </button>
+      <!-- /.toggle-btn__btn -->
+    </li>
+    <!-- /.toggle-btn__item -->
+  {% endfor %}
+</ul>
+<!-- /.toggle-btn__list -->

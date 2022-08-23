@@ -1,0 +1,18 @@
+{% for dropdown in dropdowns %}
+  <div class="dropdown__container" data-dropdown-container>
+    <button class="dropdown__btn" data-dropdown-toggle aria-haspopup="true" aria-expanded="false">
+      {{ dropdown.btnText }}
+    </button>
+    <div class="dropdown__panel" data-dropdown-panel>
+      <ul class="u-list-unstyled dropdown__list" role="menu">
+        {% for item in dropdown.list %}
+          <li class="dropdown__item"  role="menuitem">
+            <a href="{{ item.href }}" class="dropdown__link" tabindex="-1">
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endfor %}

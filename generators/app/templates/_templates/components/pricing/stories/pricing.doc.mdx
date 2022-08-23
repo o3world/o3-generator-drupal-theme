@@ -1,0 +1,21 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Pricing
+
+## Default
+<Canvas>
+    <Story id="component-pricing--default"/>
+</Canvas>
+
+## Sale
+<Canvas>
+    <Story id="component-pricing--sale-pricing"/>
+</Canvas>
+
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+    <p>When displaying prices, the most important aspect is good semantic markup and the adddition of as much detail as possible when it comes to screen readers. The <code>u-sr-only</code> class should be used to hide information that only needs to be shown to screen readers. The reason for this is visually, we can cross an original price out to show the sale price; however, for screen reader users, this visual indentification is not possible. Adding the screen reader class can allow screen readers to get extra information, such as, "Price Reduced From: " in order to subsitute visual information.</p>
+    <p>When displaying a sale price, the <code>del</code> and <code>ins</code> tags should be used to delete and insert the original price and sale price respectively.</p>
+  </div>
+</div>

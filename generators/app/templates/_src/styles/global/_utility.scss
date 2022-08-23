@@ -1,0 +1,373 @@
+/*
+ * utility
+ *
+ ********************************************************************************/
+
+/*
+ * screen readers
+ *
+ ************************************************************/
+
+// hide visually and from screen readers
+.u-hidden {
+  // stylelint:disable-block no-important
+  display: none !important;
+}
+
+/* hide an element from the screen but visible to screen readers
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * http://a11yproject.com/posts/how-to-hide-content/
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.u-sr-only {
+  position: absolute;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap; /* 1 */
+  clip: rect(0 0 0 0);
+
+  /*
+    * Extends the .visuallyhidden class to allow the element
+    * to be focusable when navigated to via the keyboard:
+    * https://www.drupal.org/node/897638
+    */
+  &.u-focusable:active,
+  &.u-focusable:focus {
+    position: static;
+    margin: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    white-space: inherit;
+    clip: auto;
+  }
+}
+
+.u-sr-show {
+  position: relative;
+  display: block;
+  margin: 12px 0 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  white-space: normal;
+  clip: auto;
+}
+
+.u-float-left { float: left; }
+.u-float-right { float: right; }
+
+/*
+ * clear-fix
+ *
+ ************************************************************/
+
+// clear fix - https://css-tricks.com/snippets/css/clear-fix/
+// applied to both before and after to help with floated flexible content display
+.u-cf::before,
+.u-cf::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+/*
+ * Spacing
+ *
+ ************************************************************/
+
+// Margin
+
+.u-margin {
+
+  &-hug { margin: 0; }
+
+  &-sm { margin: $small-spacing; }
+  &-md { margin: $base-spacing; }
+  &-lg {
+    margin: $base-spacing;
+
+    @media (min-width: breakpoint(medium)) {
+      margin: $base-spacing * 2;
+    }
+  }
+
+  &-xl {
+    margin: $base-spacing;
+
+    @media (min-width: breakpoint(medium)) {
+      margin: $base-spacing * 3;
+    }
+  }
+
+  &-top {
+
+    &-sm { margin-top: $small-spacing; }
+    &-md { margin-top: $base-spacing; }
+    &-lg {
+      margin-top: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-top: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      margin-top: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-top: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-right {
+
+    &-sm { margin-right: $small-spacing; }
+    &-md { margin-right: $base-spacing; }
+    &-lg {
+      margin-right: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-right: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      margin-right: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-right: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-bottom {
+
+    &-sm { margin-bottom: $small-spacing; }
+    &-md { margin-bottom: $base-spacing; }
+    &-lg {
+      margin-bottom: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-bottom: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      margin-bottom: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-bottom: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-left {
+
+    &-sm { margin-left: $small-spacing; }
+    &-md { margin-left: $base-spacing; }
+    &-lg {
+      margin-left: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-left: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      margin-left: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        margin-left: $base-spacing * 3;
+      }
+    }
+  }
+}
+
+// Padding
+
+.u-padding {
+
+  &-sm { padding: $small-spacing; }
+  &-md { padding: $base-spacing; }
+  &-lg {
+    padding: $base-spacing;
+
+    @media (min-width: breakpoint(medium)) {
+      padding: $base-spacing * 2;
+    }
+  }
+
+  &-xl {
+    padding: $base-spacing;
+
+    @media (min-width: breakpoint(medium)) {
+      padding: $base-spacing * 3;
+    }
+  }
+
+  &-top {
+
+    &-sm { padding-top: $small-spacing; }
+    &-md { padding-top: $base-spacing; }
+    &-lg {
+      padding-top: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-top: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      padding-top: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-top: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-right {
+
+    &-sm { padding-right: $small-spacing; }
+    &-md { padding-right: $base-spacing; }
+    &-lg {
+      padding-right: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-right: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      padding-right: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-right: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-bottom {
+
+    &-sm { padding-bottom: $small-spacing; }
+    &-md { padding-bottom: $base-spacing; }
+    &-lg {
+      padding-bottom: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-bottom: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      padding-bottom: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-bottom: $base-spacing * 3;
+      }
+    }
+  }
+
+  &-left {
+
+    &-sm { padding-left: $small-spacing; }
+    &-md { padding-left: $base-spacing; }
+    &-lg {
+      padding-left: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-left: $base-spacing * 2;
+      }
+    }
+
+    &-xl {
+      padding-left: $base-spacing;
+
+      @media (min-width: breakpoint(medium)) {
+        padding-left: $base-spacing * 3;
+      }
+    }
+  }
+}
+
+/*
+ * list element layout
+ *
+ ************************************************************/
+
+// removes default list treatment
+.u-list-unstyled {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// turns default list items into horizontal list
+.u-list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+
+/*
+ * icons
+ *
+ ************************************************************/
+
+.u-icon { display: inline-block; }
+
+.u-icon-left { margin-right: 8px; }
+.u-icon-right { margin-left: 8px; }
+
+// prevent icon after text from wrapping on RWD
+// usage: Text Sample<span class="u-icon-nowrap">&nbsp;<svg/></span>
+.u-icon-nowrap {
+  white-space: nowrap;
+
+  svg { margin-top: -4px; }
+}
+
+// image replacement for hiding text on icons
+.u-icon-ir {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+/*
+ * flexbox alignment
+ *
+ ************************************************************/
+
+.u-align-self {
+  // sass-lint:disable-block no-important
+
+  &-center { align-self: center !important; }
+  &-start { align-self: flex-start !important; }
+  &-end { align-self: flex-end !important; }
+}
+
+.u-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

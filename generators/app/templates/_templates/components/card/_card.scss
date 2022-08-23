@@ -1,0 +1,61 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+/*
+ * Card Styles
+ *
+ *****************************************************************************/
+
+.card {
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: ($base-spacing * 2);
+    box-shadow: $box-shadow-default;
+    width: 100%;
+
+    &--link {
+      height: 100%;
+      text-decoration: none; // override default link styling
+      transition: box-shadow $transition-duration;
+
+      &:focus,
+      &:hover {
+        box-shadow: $box-shadow-hover;
+
+        .card__btn { background-color: color(primary, hover); } // sass-lint:disable-line nesting-depth
+      }
+    }
+  }
+
+  &__img {
+
+    img { width: 100%; }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    flex-grow: 1; // Safari fix to account for inaccurate flex stretch
+    align-items: flex-start;
+  }
+
+  &__btn-container {
+    margin-top: $base-spacing;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    color: color(default, dark);
+  }
+}

@@ -1,0 +1,243 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.carousel {
+  @include bem-m('text') {
+
+    .slidenav {
+      @media (min-width: $breakpoint-sm) { margin-top: 35px; }
+    }
+  }
+
+  @include bem-m('image-text') {
+
+    .slidenav {
+      @media (min-width: $breakpoint-sm) { margin-top: 35px; }
+    }
+  }
+
+  @include bem-m('image') {
+
+    .slidenav {
+      @media (min-width: $breakpoint-sm) { margin-top: 15px; }
+    }
+  }
+  height: auto;
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto 50px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-sm) { background-color: color(default, light); }
+
+    @media (min-width: $breakpoint-lg) { max-width: 800px; }
+  }
+
+  &__slides {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+
+    @media (min-width: $breakpoint-md) { width: 600px; }
+
+    li[aria-hidden='true'] { visibility: hidden; }
+
+    .carousel--image-text & {
+      min-height: 380px; // to account for a long caption, (2 lines at desktop width)
+
+      @media (min-width: $breakpoint-sm) { min-height: 430px; }
+
+      @media (min-width: $breakpoint-md) { min-height: 500px; }
+    }
+
+    .carousel--image & {
+      min-height: 270px;
+
+      @media (min-width: $breakpoint-sm) { min-height: 350px; }
+
+      @media (min-width: $breakpoint-md) { min-height: 440px; }
+    }
+
+    .carousel--text & {
+      min-height: 290px;
+
+      @media (min-width: $breakpoint-md) { min-height: 440px; }
+    }
+  }
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: left .7s ease-in-out, opacity .7s ease-in-out, visibility .7s ease-in-out;
+
+    &.in-transition { visibility: visible; }
+
+    .slide__inner {
+
+      .carousel--text & {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        padding: $base-spacing;
+        width: 80%;
+        background-color: color(neutral,lightest);
+
+        @media (min-width: $breakpoint-md) { width: 100%; }
+      }
+
+      h4,
+      p { text-align: center; }
+    }
+
+    .carousel--text & {
+      display: flex;
+      height: 100%;
+    }
+
+    .image__container {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background-color: color(neutral, lighest);
+
+      @media (min-width: $breakpoint-sm) { height: 350px; }
+
+      @media (min-width: $breakpoint-md) { height: 440px; }
+
+      .carousel--image-text &,
+      .carousel--image & { background-color: color(neutral, lightest); }
+    }
+
+    .slide__image {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: auto;
+      min-height: 210px;
+      transform: translateY(-50%);
+    }
+
+    .slide__caption {
+      @include font-size($base-font-size);
+
+      padding: $base-spacing;
+      min-height: 60px;
+      background-color: color(neutral, lightest);
+    }
+
+    &.next { left: 100%; }
+
+    &.prev { left: -100%; }
+
+    &.current {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    width: 100%;
+    height: 240px; // matches max-height of image container
+
+    @media (min-width: $breakpoint-sm) { height: 350px; } // matches max-height of image container
+
+    @media (min-width: $breakpoint-md) { height: 440px; } // matches max-height of image container
+
+    li { margin-top: 0; }
+  }
+
+  & .btn__carousel {
+    border-radius: 0;
+    padding: 10px;
+    min-width: 44px;
+    background-color: color(default, transparent-medium);
+    cursor: pointer;
+    color: color(default, light);
+
+    @media (min-width: $breakpoint-md) {
+      background-color: color(default, light);
+      color: color(default, dark);
+    }
+
+    &:focus,
+    &:hover {
+      background-color: color(neutral, base);
+      color: color(default, light);
+    }
+
+    .carousel--text & {
+      background-color: transparent;
+      color: color(default, dark);
+    }
+  }
+
+  // prev and next arrows
+  &__arrow {
+    width: 26px;
+    height: 26px;
+    color: currentcolor;
+
+    &--prev { transform: rotate(90deg); }
+
+    &--next { transform: rotate(-90deg); }
+  }
+
+
+  .slidenav > li > button {
+    position: relative;
+    border-radius: 0;
+    border: 1px solid color(neutral, lighter);
+    min-width: 44px;
+    height: 44px;
+    background-color: color(default,light);
+    font-size: 16px;
+    color: color(default, dark);
+
+    &.current,
+    &:hover {
+      background-color: color(neutral, light);
+      color: color(default, light);
+    }
+
+    &.btn__action {
+      margin-right: $small-spacing;
+      padding: 0;
+      min-width: 44px;
+      background-color: color(neutral, base);
+      color: color(default, light);
+
+      svg {
+        margin-bottom: 3px;
+        width: 22px;
+        height: 22px;
+        pointer-events: none;
+      }
+    }
+  }
+}

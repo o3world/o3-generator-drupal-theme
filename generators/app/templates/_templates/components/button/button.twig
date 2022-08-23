@@ -1,0 +1,17 @@
+{% if href %}
+    <a class="btn {{classes}}" href="{{href}}" title="link to {{href}}" {% if newTab == true %} target="_blank" rel="noopener noreferrer" {% endif %}>
+{% else %}
+    <button class="btn {{classes}}" {% if disabled == true %} disabled {% endif %}>
+{% endif %}
+        {{text}}
+{% if icon == 'arrow'%}
+        <svg class="btn__arrow" viewBox="0 0 407.437 407.437" role="presentation" aria-hidden="true">
+            <polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 "/>
+        </svg>
+{% endif %}
+{% if href %}
+    </a>
+{% else %}
+    </button>
+{% endif %}
+

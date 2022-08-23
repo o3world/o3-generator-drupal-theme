@@ -1,0 +1,18 @@
+<!-- NOTE: All inline styles should be removed prior to implimentation -->
+<h3 style="margin-bottom: 25px;">Types of notifications:</h3>
+
+{% for notification in notifications %}
+  <div class="notification notification--{{ notification.type }}" role="notification">
+      <span>{{ notification.text }}</span>
+      {% if notification.dismissButton %}
+        <button class="notification__close" aria-label="close notification" data-notification-close>
+          x
+        </button>
+      {% endif %}
+  </div>
+{% endfor %}
+
+<h3 style="margin-top: 50px; margin-bottom: 25px;">Notification triggers:</h3>
+<div data-notification-type="success" data-notification-text="This was successfull" data-is-dismissible>
+  <button data-notification-trigger>Click me to add a notification with a dismiss button</button>
+</div>

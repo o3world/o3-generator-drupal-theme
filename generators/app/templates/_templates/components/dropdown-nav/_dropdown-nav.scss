@@ -1,0 +1,249 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.dropdown-nav {
+  border-bottom: 1px solid color(neutral, lighter);
+  background-color: color(neutral, lightest);
+
+  &__inner {
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  &__menu {
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      margin: 0 auto;
+      width: auto;
+    }
+  }
+
+  &__toggle-container {
+    display: flex;
+
+    @media (min-width: $breakpoint-md) { display: none; }
+  }
+
+  &__toggle {
+    margin-left: auto;
+    border-radius: 0;
+    background-color: transparent;
+    color: $text-color;
+
+    &:focus { z-index: 1; }  // to see full focus outline
+  }
+
+  &__list-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height .2s ease-in-out, visibility .2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      height: auto;
+      overflow: visible;
+      visibility: visible;
+    }
+
+    &.is-open {
+      height: 100vh;
+      overflow: auto;
+      visibility: visible;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    transition: height .2s ease-in-out, visibility .2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      margin: 0 auto;
+      width: auto;
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    border-top: 1px solid color(neutral, lighter);
+    border-right: 1px solid color(neutral, lighter);
+    border-left: 1px solid color(neutral, lighter);
+    background-color: color(neutral, lightest);
+
+    @media (min-width: $breakpoint-md) {
+      display: inline-block;
+      border: 0;
+      padding: $base-spacing 0;
+
+      &:focus,
+      &:focus-within,
+      &:hover,
+      &.is-hovered {
+
+        &__sub-list-container {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    &:last-child {
+      border-bottom: 1px solid color(neutral, lighter);
+
+      @media (min-width: $breakpoint-md) { border: 0; }
+    }
+
+    .sub-nav__toggle {
+      display: block;
+      border: 0;
+      border-left: 1px solid color(neutral, lighter);
+      padding: 20px;
+      background-color: color(neutral, lightest);
+
+      @media (min-width: $breakpoint-md) { display: none; }
+
+      &:focus { z-index: 1; } // to see full focus outline
+    }
+
+    .sub-nav__arrow {
+      display: block;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      transition: .2s ease-in-out;
+
+      &.is-active { transform: rotate(180deg); }
+    }
+  }
+
+  &__item + &__item {
+    list-style: none;
+
+    @media (min-width: $breakpoint-md) { margin-left: 40px; }
+  }
+
+  &__link {
+    @include font-size(18);
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0 15px 15px;
+    width: auto;
+
+    @media (min-width: $breakpoint-md) {
+      display: inline-flex;
+      line-height: 1;
+    }
+  }
+
+  &__link.is-open + button + &__sub-list-container {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__sub-list-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: height .2s ease-in-out, visibility .2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: block;
+      margin: 0;
+      border: 1px solid #dcdcdc;
+      border-top: 0;
+      width: 180px;
+      height: auto;
+      overflow: visible;
+      background-color: #f4f4f4;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.is-open { height: auto; }
+  }
+
+  &__sub-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: color(neutral, lightest);
+    transition: height .2s ease-in-out, visibility .2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      margin: 0;
+      border-top: 0;
+      padding: 10px;
+      height: auto;
+      max-height: none;
+      background-color: color(neutral, lightest);
+      visibility: visible;
+      transition: none;
+    }
+
+    .is-open & { border-top: 1px solid color(neutral, lighter); }
+  }
+
+  &__sub-item {
+    @include font-size(16);
+
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid color(neutral, lighter);
+    padding: 15px 0 15px 60px;
+    background-color: color(neutral, lightest);
+    list-style: none;
+
+    @media (min-width: $breakpoint-md) {
+      border: 0;
+      padding: 0;
+    }
+
+    &:last-child { border-bottom: 0; }
+  }
+
+  &__sub-item + &__sub-item {
+    @media (min-width: $breakpoint-md) { margin-top: 10px; }
+  }
+
+  &__arrow {
+    display: none;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+
+    @media (min-width: $breakpoint-md) {
+      display: block;
+      margin-right: 0;
+      margin-left: 10px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

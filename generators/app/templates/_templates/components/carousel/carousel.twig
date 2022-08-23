@@ -1,0 +1,47 @@
+{% set slides = carousels.slides %}
+{% set type = {
+    imageText: ' carousel--image-text',
+    image: ' carousel--image',
+    text: ' carousel--text',
+} %}
+
+{% for carousel in carousels %}
+<section  class="carousel carousel--
+    {%- if carousel.type -%}
+        {{- carousel.type }}
+    {%- endif %}
+    carousel__container"
+    id="carousel-{{ random() }}"
+    aria-labelledby="carouselheading"
+    data-carousel
+    >
+    <h3 class="u-sr-only" id="carouselheading" >Carousel heading.</h3>
+
+    <ul class="u-list-unstyled u-list-inline carousel__slides">
+        {% for slide in carousel.slides %}
+        <li class="carousel__slide" data-slide-item aria-hidden="true">
+            {% if slide.image %}
+            <figure class="slide__inner">
+                <div class="image__container">
+                    <img src="{{ slide.image.src }}" class="slide__image" alt="{{ slide.image.alt }}">
+                </div>
+                {% if slide.image.caption %}
+                <figcaption class="u-align-self-start slide__caption">
+                    {{ slide.image.caption }}
+                </figcaption>
+                {% endif %}
+            </figure>
+            {% endif %}
+            {% if slide.text %}
+            <article class="slide__inner">
+                {% if slide.heading %}
+                <h4>{{slide.heading}}</h4>
+                {% endif %}
+                <p>{{ slide.text }}</p>
+            </article>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endfor %}

@@ -1,0 +1,34 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Tabs To Accordion
+
+<Canvas>
+    <Story id="component-tabs-to-accordion--default"/>
+</Canvas>
+<div class="documentation__container">
+  <div class="documentation__col">
+    <h3>Usage</h3>
+		<p>This component displays content in a tabbed format on desktop, and transitions to display the content in an accordion on mobile.</p>
+    <h3>Labelling Expectations</h3>
+    <ul>
+      <li>The element that wraps tabs has <code>role="tablist"</code>.</li>
+      <li>Each tab has <code>role="tab"</code> and is contained within the element with <code>role="tablist"</code>.</li>
+			<li>Each tab content panel has <code>role="tabpanel"</code>.</li>
+      <li>Each tab has the property <code>aria-controls</code> referring to its tabpanel.</li>
+			<li>The active tab has <code>aria-selected="true"</code> and all other tab elements have <code>aria-selected="false"</code>.</li>
+    </ul>
+  </div>
+  <div class="documentation__col">
+    <h3>Focus Expectations</h3>
+    <ul>
+      <li>Tab and accordion headers should have visible keyboard focus state</li>
+      <li>All keyboard interactions relate to when headers are focused</li>
+    </ul>
+    <h3>Keyboard Expectations</h3>
+    <ul class="documentation__keys">
+			<li><code>Space</code> or <code>Enter</code> = Activate tabs and accordion panels</li>
+			<li><code>&leftarrow;</code> <code>&rightarrow;</code> = Cycles tab and accordion panel focus</li>
+      <li><code>Control &plus; Option</code> <code>&leftarrow;</code> <code>&rightarrow;</code> = Navigate through tab and accordion content with screen reader</li>
+    </ul>
+  </div>
+</div>

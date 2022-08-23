@@ -1,0 +1,35 @@
+// Generated Stylesheet
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+.notification {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid color(neutral, lighter);
+  padding: 12px;
+  width: 100%;
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &--success {
+    background-color: rgba(color(success, base), .4);
+  }
+
+  &--info {
+    background-color: rgba(color(secondary, base), .4);
+  }
+
+  &--warning {
+    background-color: rgba(color(warning, base), .4);
+  }
+
+  &--error {
+    background-color: rgba(color(primary, base), .4);
+  }
+}

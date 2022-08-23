@@ -1,0 +1,42 @@
+@import '~variables';
+@import '~mixins';
+@import '~functions';
+
+
+.btn {
+  @include font-size(14);
+
+  display: inline-block;
+  border-radius: 8px;
+  border: 0;
+  padding: 10px 20px;
+  min-width: 140px;
+  background-color: color(primary, base);
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.75;
+  font-family: $brand-font-b;
+  font-weight: 400;
+  color: color(default, light);
+  transition: .2s $ease-in-sine;
+  appearance: none;
+
+  &:focus,
+  &:hover {
+    background-color: color(primary, hover);
+    cursor: pointer;
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: color(neutral, base);
+    pointer-events: none;
+  }
+
+  &__arrow {
+    margin-left: 5px;
+    width: 10px;
+    height: 10px;
+    fill: color(default, light);
+  }
+}
