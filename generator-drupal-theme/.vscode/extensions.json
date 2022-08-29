@@ -2,7 +2,6 @@
     "recommendations": [
         "dbaeumer.vscode-eslint",
         "EditorConfig.EditorConfig",
-        "stylelint.vscode-stylelint"
-    ],
+        "mrmlnc.vscode-csscomb"
+    ]
 }
-//

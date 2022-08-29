@@ -23,7 +23,6 @@
     "eslint-config-airbnb": "^19.0.4",
     "jest": "^26.1.0",
     "prettier": "^1.19.1",
-    "semantic-release-monorepo": "^7.0.5",
     "yeoman-assert": "^3.1.1",
     "yeoman-test": "^1.7.0"
   },
