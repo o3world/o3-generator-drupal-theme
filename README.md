@@ -1,15 +1,11 @@
-
-
 # O3 Drupal Theme Generator
 The O3 Drupal Theme Generator is a quick way to run a few commands a get up and running with a new Drupal theme that includes the following goodies.
 Shout out to Mike Herceg for automating this!
 - Storybook
-- eslint & sasslint?
-- recommended vscode settings
-- thing1
-- thing2
+- Eslint & sasslint
+- Recommended vscode settings
 
-## Installation
+## Installatio
 
 If this is your first time using the generator, you will want to install Yeoman & the O3 Theme Generator:
 - Install [Yeoman](http://yeoman.io) globally
