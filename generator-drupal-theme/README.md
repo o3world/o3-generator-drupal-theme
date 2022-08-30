@@ -5,7 +5,7 @@ Shout out to Mike Herceg for automating this!
 - Eslint & sasslint
 - Recommended vscode settings
 
-## Installatio
+## Installation
 
 If this is your first time using the generator, you will want to install Yeoman & the O3 Theme Generator:
 - Install [Yeoman](http://yeoman.io) globally
