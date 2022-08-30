@@ -12,7 +12,7 @@ on:
 
 defaults:
   run:
-    working-directory: generators
+    working-directory: generator-drupal-theme
 
 jobs:
   publish:
