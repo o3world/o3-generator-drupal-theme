@@ -58,7 +58,6 @@ module.exports = class extends Generator {
     const camelThemeName = _.camelCase(this.answers.themeName);
     const pascalThemeName = _.startCase(_.camelCase(this.answers.themeName)).replace(/ /g, '');
 
-
     // pass this object for files that need to be customized
     const templateValues = {
       title: startThemeName,
