@@ -1,0 +1,49 @@
+on:
+  push:
+    branches:
+      - main
+    paths: 
+      - generator-drupal-theme/**
+  pull_request:
+    branches:
+      - main
+    paths: 
+      - generator-drupal-theme/**
+
+defaults:
+  run:
+    working-directory: generator-drupal-theme
+
+jobs:
+  publish:
+    name: Publish Drupal Theme Generator
+    runs-on: ubuntu-latest
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache node_modules
+        id: cache-modules
+        uses: actions/cache@v1
+        with:
+          path: generator-drupal-theme/node_modules
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
+      - name: Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install
+        if: steps.cache-modules.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Setup Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      - name: Release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
