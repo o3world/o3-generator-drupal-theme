@@ -3,12 +3,12 @@ on:
     branches:
       - master
     paths: 
-      - generators/**
+      - generator-drupal-theme/**
   pull_request:
     branches:
       - master
     paths: 
-      - generators/**
+      - generator-drupal-theme/**
 
 defaults:
   run:
@@ -26,7 +26,7 @@ jobs:
         id: cache-modules
         uses: actions/cache@v1
         with:
-          path: generators/node_modules
+          path: generator-drupal-theme/node_modules
           key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.json') }}
       - name: Git Identity
         run: |
