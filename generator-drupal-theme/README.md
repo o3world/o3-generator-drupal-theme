@@ -19,7 +19,7 @@ If this is your first time using the generator, you will want to install Yeoman 
 After installing the above, this command will be available. 
 - Within the folder you wish to generate your theme in. Typically in `web/themes/custom/` run:
     ```bash
-    yo drupal-theme
+    yo @o3world/drupal-theme
     ``` 
 ## Storybook
 To run storybook:

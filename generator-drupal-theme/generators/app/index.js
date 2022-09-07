@@ -11,9 +11,9 @@ module.exports = class extends Generator {
     this.log(
       '\n\n',
       yosay(
-        `Welcome to the impressive ${chalk.red(
-          'generator-drupal-theme',
-        )} generator!`,
+        `Hey! you are using the ${chalk.red(
+          '@o3world/generator-drupal-theme',
+        )} generator! I'm here to make your job easier`,
       ),
     );
 
@@ -95,27 +95,11 @@ module.exports = class extends Generator {
     // Build file name specific theme files.
     //
     buildFileFromTemplate(
-      this.templatePath('_root-files/drupal/AbstractComponent.php'),
-      themeDirectoryPath('/')
-    )
-    buildFileFromTemplate(
       this.templatePath('_root-files/drupal/TemplatedName.info.yml'),
       themeDirectoryPath('/')
     )
     buildFileFromTemplate(
       this.templatePath('_root-files/drupal/TemplatedName.libraries.yml'),
-      themeDirectoryPath('/')
-    )
-    buildFileFromTemplate(
-      this.templatePath('_root-files/drupal/TemplatedName.theme'),
-      themeDirectoryPath('/')
-    )
-    buildFileFromTemplate(
-      this.templatePath('_root-files/drupal/TemplatedNameComponentInterface.php'),
-      themeDirectoryPath('/')
-    )
-    buildFileFromTemplate(
-      this.templatePath('_root-files/drupal/TemplatedNameServicesCollector.php'),
       themeDirectoryPath('/')
     )
 
